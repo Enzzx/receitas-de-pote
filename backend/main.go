@@ -19,11 +19,11 @@ func main() {
     }
 
     //credencias do .env
-    dbHost := os.Getenv("DATABASE_HOST")
-    dbUser := os.Getenv("DATABASE_USER")
-    dbPassword := os.Getenv("DATABASE_PASSWORD")
-    dbName := os.Getenv("DATABASE_NAME")
-    dbPort := os.Getenv("DATABASE_PORT")
+    dbHost := os.Getenv("PGHOST")
+    dbUser := os.Getenv("PGUSER")
+    dbPassword := os.Getenv("PGPASSWORD")
+    dbName := os.Getenv("PGDATABASE")
+    dbPort := os.Getenv("PGPORT")
 
     dsn := fmt.Sprintf("postgres://%s:%s@%s:%s/%s", dbUser, dbPassword, dbHost, dbPort, dbName)
 
