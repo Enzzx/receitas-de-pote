@@ -14,9 +14,6 @@ import (
 func main() {
     //carrega as variáveis do arquivo .env
     err := godotenv.Load()
-    if err != nil {
-        log.Fatal("erro ao carregar arquivo .env")
-    }
 
     //credencias do .env
     dbHost := os.Getenv("PGHOST")
