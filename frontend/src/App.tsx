@@ -8,14 +8,18 @@ function App() {
   const [backendMessage, setBackendMessage] = useState<string | null>(null);
 
   useEffect(() => {
-    // Faz uma chamada para o backend ao carregar a página
-    fetch(import.meta.env.BACKEND_URL + '/')
-      .then((response) => response.text())
-      .then((data) => setBackendMessage(data))
-      .catch((error) => {
-        console.error("Erro ao buscar dados do backend:", error);
-        setBackendMessage("Erro ao conectar ao backend.");
-      });
+    const fetchBackend = async () => {
+      try {
+        const res = await fetch(import.meta.env.VITE_BACKEND_URL + "/")
+        console.log(import.meta.env)
+        const data = await res.text()
+        setBackendMessage(data)
+      } catch (e) {
+        console.error(e)
+        setBackendMessage("erro ao conectar ao servidor")
+      }
+    }
+    fetchBackend()
   }, []);
 
   return (
