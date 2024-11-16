@@ -11,7 +11,7 @@ function App() {
     const fetchBackend = async () => {
       try {
         const res = await fetch(import.meta.env.VITE_BACKEND_URL + "/")
-        console.log(import.meta.env)
+        console.log(import.meta.env.VITE_BACKEND_URL)
         const data = await res.text()
         setBackendMessage(data)
       } catch (e) {
