@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     // Faz uma chamada para o backend ao carregar a página
-    fetch(import.meta.env.VITE_API_URL + '/')
+    fetch(import.meta.env.BACKEND_URL + '/')
       .then((response) => response.text())
       .then((data) => setBackendMessage(data))
       .catch((error) => {
