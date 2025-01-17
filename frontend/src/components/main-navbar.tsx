@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 export default function MainNavbar() {
     return (
         <ul>
+            <li><NavLink to="/"><img src="/" alt="Logo" /></NavLink></li>
             <li><NavLink to="/list" end>Lista</NavLink></li>
             <li><NavLink to="/news" end>News</NavLink></li>
             <li><NavLink to="/" end>Home</NavLink></li>
