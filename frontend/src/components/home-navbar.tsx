@@ -5,10 +5,10 @@ export default function HomeNavbar() {
                 <div className="menu-hamburguer">hamburguer</div>
                 <form id="search-bar">
                     <input type="search" name="q" placeholder="pesquise uma receita"/>
-                    <button type="submit"><img src="/" alt="search" /></button>
+                    <button type="submit"><img src="./icons/search.png" alt="search" /></button>
                 </form>
                 <div className="pfp">
-                    <img src="/" alt="pfp" />
+                    <img src="./icons/account.png" alt="pfp" />
                     <p>username</p>
                 </div>
             </section>
