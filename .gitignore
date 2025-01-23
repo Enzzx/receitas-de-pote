@@ -1,6 +1,7 @@
 # - - - FRONTEND
 frontend/.env.local
 frontend/Dockerfile
+frontend/do-later.txt
 
 # Logs
 logs
