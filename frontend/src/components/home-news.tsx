@@ -8,6 +8,7 @@ type Noticia = {
     imagem: string;
     topico: string;
     data_postagem: string;
+    path: string;
 }
 
 export default function HomeNews() {
@@ -28,20 +29,27 @@ export default function HomeNews() {
     return (
         <div id="home-news">
             <article className="main-news">
-                <img src={mainNews.imagem} />
-                <h2>{mainNews.titulo}</h2>
-                <p>{mainNews.descricao}</p>
+                <a href={mainNews.path}>
+                    <img src={mainNews.imagem} alt="imagem da notícia"/>
+                    <h2>{mainNews.titulo}</h2>
+                    <p>{mainNews.descricao}</p>
+                </a>
             </article>
             <section className="other-news">
+                <h3>Últimas notícias</h3>
                 {otherNews.map(noticia => (
-                    <ul key={noticia.id}>
-                        <li>{noticia.id}</li>
-                        <li>{noticia.imagem}</li>
-                        <li>{noticia.titulo}</li>
-                        <li>{noticia.descricao}</li>
-                        <li>{noticia.topico}</li>
-                        <li>{noticia.data_postagem}</li>
-                    </ul>
+                    <a href={noticia.path}>
+                        <img src={noticia.imagem} alt="imagem da notícia" />
+                        <div className="news-box">
+                            <div className="news-box-info">
+                                <h4>{noticia.titulo}</h4>
+                                <aside>
+                                    <p>{noticia.topico}</p>
+                                    <p>{noticia.data_postagem}</p>
+                                </aside>
+                            </div>
+                        </div>
+                    </a>
                 ))}
             </section>
         </div>
