@@ -2,7 +2,7 @@ export default function HomeNavbar() {
     return (
         <nav>
             <section>
-                <div className="menu-hamburguer">hamburguer</div>
+                <img src="./icons/menu.png" alt="menu" />
                 <form id="search-bar">
                     <input type="search" name="q" placeholder="pesquise uma receita"/>
                     <button type="submit"><img src="./icons/search.png" alt="search" /></button>

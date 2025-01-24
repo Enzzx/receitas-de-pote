@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "titulo": "5 Receitas Rápidas para um Jantar Saudável",
+      "descricao": "Descubra como preparar refeições deliciosas e nutritivas em menos de 30 minutos.",
+      "imagem": "https://via.placeholder.com/300x200",
+      "data_postagem": "2025-01-23T18:30:00",
+      "topico": "receitas"
+    },
+    {
+      "id": 2,
+      "titulo": "O Segredo dos Chefs: Como Fazer o Melhor Pão Caseiro",
+      "descricao": "Chefs renomados compartilham truques simples para transformar seu pão caseiro.",
+      "imagem": "https://via.placeholder.com/300x200",
+      "data_postagem": "2025-01-22T14:00:00",
+      "topico": "bons hábitos"
+    },
+    {
+      "id": 3,
+      "titulo": "Famosos Revelam Suas Receitas Preferidas",
+      "descricao": "Veja os pratos favoritos de celebridades e aprenda a prepará-los em casa.",
+      "imagem": "https://via.placeholder.com/300x200",
+      "data_postagem": "2025-01-21T10:45:00",
+      "topico": "famosos"
+    },
+    {
+      "id": 4,
+      "titulo": "Os Benefícios do Consumo de Ervas na Dieta Diária",
+      "descricao": "Como adicionar ervas às suas receitas pode melhorar sua saúde e bem-estar.",
+      "imagem": "https://via.placeholder.com/300x200",
+      "data_postagem": "2025-01-20T08:15:00",
+      "topico": "saúde"
+    },
+    {
+      "id": 5,
+      "titulo": "Receita de Brownie Sem Glúten Faz Sucesso na TV",
+      "descricao": "A receita de um delicioso brownie sem glúten foi destaque em um programa de culinária famoso.",
+      "imagem": "https://via.placeholder.com/300x200",
+      "data_postagem": "2025-01-19T16:20:00",
+      "topico": "programa de tv"
+    }
+  ]
+  
