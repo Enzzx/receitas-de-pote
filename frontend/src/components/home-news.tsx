@@ -22,6 +22,16 @@ export default function HomeNews() {
         }
     }, [])
 
+    function getTimeFromDate(date: string): string {
+        const postDate: Date = new Date(date)
+        const now: Date = new Date()
+        let diff: number = now.getTime() - postDate.getTime()
+
+        diff = Math.floor(diff / (1000 * 60 * 60 * 24))
+
+        return `há ${diff.toString()} dias`
+    }
+
     if (!mainNews) {
         return <p>Carregando...</p>
     }
@@ -38,19 +48,18 @@ export default function HomeNews() {
             <section className="other-news">
                 <h3>Últimas notícias</h3>
                 {otherNews.map(noticia => (
-                    <a href={noticia.path}>
+                    <a href={noticia.path} key={noticia.id}>
                         <img src={noticia.imagem} alt="imagem da notícia" />
-                        <div className="news-box">
-                            <div className="news-box-info">
-                                <h4>{noticia.titulo}</h4>
-                                <aside>
-                                    <p>{noticia.topico}</p>
-                                    <p>{noticia.data_postagem}</p>
-                                </aside>
-                            </div>
+                        <div className="news-box-info">
+                            <h4>{noticia.titulo}</h4>
+                            <aside>
+                                <p>{noticia.topico}</p>
+                                <p>{getTimeFromDate(noticia.data_postagem)}</p>
+                            </aside>
                         </div>
                     </a>
                 ))}
+                <button>Mais notícias</button>
             </section>
         </div>
     )

@@ -10,9 +10,9 @@
 /* - - - - - - App.tsx - - - - - - */
 header {
     z-index: 1;
-    background: #fffbf1;
+    background: #fff5dd;
     width: 70px;
-    padding: 20px 5px;
+    padding: 20px 10px;
     /* border-right: 1px solid #e3e3e3; */
     box-sizing: content-box;
 }
@@ -56,6 +56,7 @@ header ul a:visited {
 
 
 main {
+    position: relative;
     flex: auto;
     background: white;
     overflow: auto;
@@ -66,20 +67,27 @@ footer {
     flex: none;
     display: none;
     text-align: center;
-    background: #fff6e4;
+    background: #fff5dd;
     padding: 15px;
 }
 
 
 /* - - - - - - home-navbar.tsx - - - - - - */
 nav {
+    position: sticky;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     background: white;
-    /* max-width: 100%; */
+    width: 100%;
     padding: 0 50px;
     box-shadow: 0px 1px 10px #8d8d8d27;
     box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+.shrink {
+    padding: 0 30px;
 }
 nav section {
     display: flex;
@@ -94,7 +102,7 @@ nav form {
     display: flex;
     flex-direction: row;
     border: solid 1px black;
-    border-radius: 8px;
+    border-radius: 5px;
     overflow: hidden;
 }
 nav form input {
@@ -110,8 +118,8 @@ nav form button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #D99873;
-    padding: 5px 15px;
+    background: #e88e59;
+    padding: 5px 10px;
     border: none;
     cursor: pointer;
 }
@@ -139,6 +147,9 @@ nav ul {
     overflow-x: auto;
     scrollbar-width: thin;
 }
+.hide-nav-ul {
+    display: none;
+}
 nav ul li {
     transition: 0.1s;
 }
@@ -146,9 +157,11 @@ nav ul li:hover {
     cursor: pointer;
 }
 nav ul li:hover {
-    color: #D99873;
+    color: #e88e59;
 }
 
+
+/* - - - - - - home-news.tsx - - - - - - */
 #home-news {
     display: flex;
     justify-content: space-around;
@@ -156,22 +169,70 @@ nav ul li:hover {
     padding: 30px;
 }
 .main-news {
-    flex: 70%;
+    flex: 55%;
 }
-.main-news a {
+.main-news a, .other-news a {
     color: inherit;
     text-decoration: none;
 }
 .main-news a:hover h2 {
-    text-decoration: underline 2px #D99873;
+    text-decoration: underline 2px #e88e59;
 }
 .main-news img {
     width: 100%;
     height: auto;
 }
+.main-news h2 {
+    margin: 10px 0;
+}
 .other-news {
+    flex: 45%;
+}
+.other-news h3 {
+    font-size: 1.2em;
+    border-bottom: solid 3px #e88e59;
+}
+.other-news a {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 20px 0;
+    border-bottom: solid 1px grey;
+}
+.other-news a:nth-last-child(2) {
+    border-bottom: none;
+}
+.other-news a img {
     flex: 30%;
+    width: 30%;
 }
-.other-news ul {
-    list-style-type: none;
+.other-news a .news-box-info {
+    flex: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
 }
+.news-box-info aside {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    color: #728c69;
+}
+.other-news button {
+    display: block;
+    background: transparent;
+    margin: 10px auto;
+    padding: 7px 18px;
+    border: solid 1px #ec9e70;
+    border-radius: 3px;
+    transition: 0.2s ease;
+}
+.other-news button:hover {
+    background: #ec9e70;
+    border: solid 1px transparent;
+    cursor: pointer;
+}
+
+
+/* - - - - - - search-bar.tsx - - - - - - */
