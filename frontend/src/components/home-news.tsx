@@ -22,6 +22,7 @@ export default function HomeNews() {
         }
     }, [])
 
+    //count the post date to present date
     function getTimeFromDate(date: string): string {
         const postDate: Date = new Date(date)
         const now: Date = new Date()

@@ -1,8 +1,8 @@
-import RecipeBox , { BoxData } from "./recipe-box";
+import RecipeBox , { RecipeData } from "./recipe-box";
 
 type Props = {
     title: string;
-    boxes: BoxData[];
+    boxes: RecipeData[];
 }
 
 export default function RecipesContainer(props: Props) {

@@ -1,4 +1,4 @@
-export type BoxData = {
+export type RecipeData = {
     id: number;
     image: string;
     title: string;
@@ -7,9 +7,10 @@ export type BoxData = {
     path: string;
 }
 
-export default function RecipeBox(props: BoxData) {
+export default function RecipeBox(props: RecipeData) {
     let { image, title, caption, rate, path } = props
 
+    //take a slice of the string to show in HTML
     function reticence(str: string): string {
         if (str.length <= 80) return str
 

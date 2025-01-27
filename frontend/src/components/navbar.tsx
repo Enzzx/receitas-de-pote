@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 
-export default function HomeNavbar() {
+export default function Navbar() {
     const [isShrunk, setIsShrunk] = useState<boolean>(false)
 
+    //shrink and unshrink the navbar
     useEffect(() => {
         const home: any = document.querySelector("main")
 
