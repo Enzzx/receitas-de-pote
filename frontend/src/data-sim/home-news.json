@@ -1,47 +1,47 @@
 [
   {
       "id": 1,
-      "titulo": "5 Receitas Rápidas e Fáceis para um Jantar Saudável e Saboroso",
-      "descricao": "Descubra como preparar refeições deliciosas, nutritivas e rápidas em menos de 30 minutos, perfeitas para um jantar saudável e saboroso após um dia corrido.",
-      "imagem": "https://placehold.co/600x400",
-      "data_postagem": "2025-01-23T18:30:00",
-      "topico": "receitas",
+      "title": "5 Receitas Rápidas e Fáceis para um Jantar Saudável e Saboroso",
+      "caption": "Descubra como preparar refeições deliciosas, nutritivas e rápidas em menos de 30 minutos, perfeitas para um jantar saudável e saboroso após um dia corrido.",
+      "image": "https://placehold.co/600x400",
+      "post_date": "2025-01-23T18:30:00",
+      "topic": "receitas",
       "path": "#"
   },
   {
       "id": 2,
-      "titulo": "O Segredo dos Chefs: Como Fazer o Melhor Pão Caseiro com Dicas Simples",
-      "descricao": "Chefs renomados compartilham truques simples e eficazes para transformar seu pão caseiro em uma obra-prima culinária, com dicas que vão desde a escolha dos ingredientes até a técnica de amassar.",
-      "imagem": "https://placehold.co/600x400",
-      "data_postagem": "2025-01-22T14:00:00",
-      "topico": "bons hábitos",
+      "title": "O Segredo dos Chefs: Como Fazer o Melhor Pão Caseiro com Dicas Simples",
+      "caption": "Chefs renomados compartilham truques simples e eficazes para transformar seu pão caseiro em uma obra-prima culinária, com dicas que vão desde a escolha dos ingredientes até a técnica de amassar.",
+      "image": "https://placehold.co/600x400",
+      "post_date": "2025-01-22T14:00:00",
+      "topic": "bons hábitos",
       "path": "#"
   },
   {
       "id": 3,
-      "titulo": "Famosos Revelam Suas Receitas Preferidas: Pratos que Encantam",
-      "descricao": "Veja os pratos favoritos de celebridades e aprenda a prepará-los em casa com receitas detalhadas e dicas exclusivas que vão impressionar seus convidados.",
-      "imagem": "https://placehold.co/600x400",
-      "data_postagem": "2025-01-21T10:45:00",
-      "topico": "famosos",
+      "title": "Famosos Revelam Suas Receitas Preferidas: Pratos que Encantam",
+      "caption": "Veja os pratos favoritos de celebridades e aprenda a prepará-los em casa com receitas detalhadas e dicas exclusivas que vão impressionar seus convidados.",
+      "image": "https://placehold.co/600x400",
+      "post_date": "2025-01-21T10:45:00",
+      "topic": "famosos",
       "path": "#"
   },
   {
       "id": 4,
-      "titulo": "Os Benefícios do Consumo de Ervas na Dieta Diária: Saúde e Bem-Estar",
-      "descricao": "Como adicionar ervas às suas receitas pode melhorar sua saúde e bem-estar, com dicas sobre as melhores ervas para diferentes pratos e seus benefícios nutricionais.",
-      "imagem": "https://placehold.co/600x400",
-      "data_postagem": "2025-01-20T08:15:00",
-      "topico": "saúde",
+      "title": "Os Benefícios do Consumo de Ervas na Dieta Diária: Saúde e Bem-Estar",
+      "caption": "Como adicionar ervas às suas receitas pode melhorar sua saúde e bem-estar, com dicas sobre as melhores ervas para diferentes pratos e seus benefícios nutricionais.",
+      "image": "https://placehold.co/600x400",
+      "post_date": "2025-01-20T08:15:00",
+      "topic": "saúde",
       "path": "#"
   },
   {
       "id": 5,
-      "titulo": "Receita de Brownie Sem Glúten Faz Sucesso na TV: Delícia Saudável",
-      "descricao": "A receita de um delicioso brownie sem glúten foi destaque em um programa de culinária famoso, conquistando o paladar de todos com seu sabor irresistível e textura perfeita.",
-      "imagem": "https://placehold.co/600x400",
-      "data_postagem": "2025-01-19T16:20:00",
-      "topico": "programa de tv",
+      "title": "Receita de Brownie Sem Glúten Faz Sucesso na TV: Delícia Saudável",
+      "caption": "A receita de um delicioso brownie sem glúten foi destaque em um programa de culinária famoso, conquistando o paladar de todos com seu sabor irresistível e textura perfeita.",
+      "image": "https://placehold.co/600x400",
+      "post_date": "2025-01-19T16:20:00",
+      "topic": "programa de tv",
       "path": "#"
   }
 ]

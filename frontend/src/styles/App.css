@@ -9,7 +9,7 @@
 
 /* - - - - - - App.tsx - - - - - - */
 header {
-    z-index: 1;
+    z-index: 2;
     background: #fff5dd;
     width: 70px;
     padding: 20px 10px;
@@ -74,6 +74,7 @@ footer {
 
 /* - - - - - - home-navbar.tsx - - - - - - */
 nav {
+    z-index: 1;
     position: sticky;
     top: 0;
     left: 0;
@@ -171,11 +172,11 @@ nav ul li:hover {
 .main-news {
     flex: 55%;
 }
-.main-news a, .other-news a {
+.main-news a, .other-news a, .recipe-box {
     color: inherit;
     text-decoration: none;
 }
-.main-news a:hover h2 {
+.main-news a:hover h2, .other-news a:hover h4 {
     text-decoration: underline 2px #e88e59;
 }
 .main-news img {
@@ -230,9 +231,38 @@ nav ul li:hover {
 }
 .other-news button:hover {
     background: #ec9e70;
+    color: white;
     border: solid 1px transparent;
     cursor: pointer;
 }
 
 
+/* - - - - - - recipes-container.tsx, recipe-box.tsx - - - - - - */
+.recipes-container {
+    text-align: center;
+    padding: 30px;
+}
+.recipes-container h2 {
+    color: #ef7e3d;
+    margin-bottom: 20px;
+}
+.recipes {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.recipe-box {
+    position: relative;
+    flex: 30%;
+    text-align: left;
+}
+.recipe-box > img {
+    width: 100%;
+    height: auto;
+}
+.recipe-box-info h3 {
+    color: #e88e59;
+}
 /* - - - - - - search-bar.tsx - - - - - - */
