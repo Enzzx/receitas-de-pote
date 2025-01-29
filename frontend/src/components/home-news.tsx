@@ -1,19 +1,10 @@
 import { useEffect, useState } from "react"
 import news from "../data-sim/home-news.json"
-
-type Noticia = {
-    id: number;
-    title: string;
-    caption: string;
-    image: string;
-    topic: string;
-    post_date: string;
-    path: string;
-}
+import { News } from "./news-box"
 
 export default function HomeNews() {
-    const [mainNews, setMainNews] = useState<Noticia | null>(null)
-    const [otherNews, setOtherNews] = useState<Noticia[]>([])
+    const [mainNews, setMainNews] = useState<News | null>(null)
+    const [otherNews, setOtherNews] = useState<News[]>([])
 
     useEffect(() => {
         if (news.length > 0) {
@@ -38,10 +29,10 @@ export default function HomeNews() {
     }
 
     return (
-        <div id="home-news">
+        <section id="home-news">
             <article className="main-news">
                 <a href={mainNews.path}>
-                    <img src={mainNews.image} alt="imagem da notícia"/>
+                    <img src={mainNews.image} alt="main's news thumb"/>
                     <h2>{mainNews.title}</h2>
                     <p>{mainNews.caption}</p>
                 </a>
@@ -50,8 +41,8 @@ export default function HomeNews() {
                 <h3>Últimas notícias</h3>
                 {otherNews.map(noticia => (
                     <a href={noticia.path} key={noticia.id}>
-                        <img src={noticia.image} alt="imagem da notícia" />
-                        <div className="news-box-info">
+                        <img src={noticia.image} alt="news thumb" />
+                        <div className="home-news-box-info">
                             <h4>{noticia.title}</h4>
                             <aside>
                                 <p>{noticia.topic}</p>
@@ -62,6 +53,6 @@ export default function HomeNews() {
                 ))}
                 <button>Mais notícias</button>
             </section>
-        </div>
+        </section>
     )
 }

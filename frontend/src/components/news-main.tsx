@@ -1,6 +1,6 @@
 export default function NewsMain() {
     return (
-        <div className="news-main">
+        <section className="news-main">
             <h1>Notícias e tendências sobre culinária</h1>
             <p>Encontre notícias sobre produtos, famosos, empresas e  outras notícias de gastronomia </p>
             <ul>
@@ -11,6 +11,6 @@ export default function NewsMain() {
                 <li>A Seguir</li>
                 <li>Trends</li>
             </ul>
-        </div>
+        </section>
     )
 }

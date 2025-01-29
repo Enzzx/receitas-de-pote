@@ -1,12 +1,15 @@
 import Navbar from "../components/navbar"
 import NewsMain from "../components/news-main"
-import news from "../data-sim/news.json"
+import NewsContainer from "../components/news-container"
+import FooterPage from "../components/footer-page"
 
 export default function News() {
     return (
         <>
             <Navbar />
-            <NewsMain /> 
+            <NewsMain />
+            <NewsContainer />
+            <FooterPage />
         </>
     )
 }

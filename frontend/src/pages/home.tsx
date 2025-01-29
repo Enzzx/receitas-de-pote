@@ -11,7 +11,13 @@ export default function Home() {
             <Navbar />
             <HomeNews />
             <RecipesContainer title={meals.title} boxes={meals.boxes}/>
-            <div className="img-background"><h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur.</h2></div>
+            <div className="img-background">
+                <section></section>
+                <article>
+                    <h2>Title something</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo dicta nulla non quae labore repellat facilis nesciunt quod doloribus, totam sit.</p>
+                </article>
+            </div>
             <RecipesContainer title={pasta.title} boxes={pasta.boxes}/>
             <FooterPage />
         </>
