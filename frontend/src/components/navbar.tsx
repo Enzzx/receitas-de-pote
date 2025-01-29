@@ -31,8 +31,8 @@ export default function Navbar() {
         <nav className={isShrunk ? "shrink" : ""}>
             <section>
                 <img src="./icons/menu.png" alt="menu" />
-                <form id="search-bar">
-                    <input type="search" name="q" placeholder="pesquise uma receita"/>
+                <form className="search-bar">
+                    <input type="search" placeholder="pesquise uma receita"/>
                     <button type="submit"><img src="./icons/search.png" alt="search" /></button>
                 </form>
                 <div className="pfp">

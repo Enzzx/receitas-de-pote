@@ -98,23 +98,23 @@ nav section {
 nav section > img {
     display: none;
 }
-nav form {
+.search-bar, .search-bar-container-search {
     display: flex;
     flex-direction: row;
     border: solid 1px black;
     border-radius: 5px;
     overflow: hidden;
 }
-nav form input {
+.search-bar input {
     font-size: 1.05rem;
     width: 400px;
     padding: 5px 15px;
     border: none;
 }
-nav form input:focus-visible {
+.search-bar input:focus-visible {
     outline: none;
 }
-nav form button {
+.search-bar button, .search-bar-container-search button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,10 +124,10 @@ nav form button {
     cursor: pointer;
     transition: 0.2s ease;
 }
-nav form button:hover {
+.search-bar button:hover, .search-bar-container-search button:hover {
     background: #c65f23;
 }
-nav form img {
+.search-bar img, .search-bar-container-search img {
     width: 20px;
     height: 20px;
 }
@@ -175,7 +175,7 @@ nav ul li:hover {
 .main-news {
     flex: 55%;
 }
-.main-news a, .other-news a, .recipe-box, .news-box {
+.main-news a, .other-news a, .recipe-box, .news-box, .search-bar-options div a {
     color: inherit;
     text-decoration: none;
 }
@@ -316,8 +316,54 @@ nav ul li:hover {
 }
 
 /* - - - - - - search-bar.tsx - - - - - - */
-
-
+.search-bar-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 30px;
+    padding: 20px 30px;
+    border: solid 1px black;
+}
+.search-bar-section {
+    flex: 50%;
+}
+.search-bar-container-search {
+    width: fit-content;
+    margin-top: 20px;
+    border-radius: inherit;
+}
+.search-bar-container-search input {
+    font-size: 1.1rem;
+    width: 350px;
+    padding: 10px 20px;
+    border: none;
+}
+.search-bar-container-search input:focus-visible {
+    outline: none;
+}
+.search-bar-container-search button {
+    padding: 0 15px;
+}
+.search-bar-options {
+    flex: 50%;
+}
+.search-bar-options div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+.search-bar-options div a {
+    background: #ef7e3d;
+    color: white;
+    font-weight: 600;
+    padding: 6px 15px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+.search-bar-options div a:hover {
+    background: #c65f23;
+}
 /* - - - - - - footer-page.tsx - - - - - - */
 .footer {
     display: flex;

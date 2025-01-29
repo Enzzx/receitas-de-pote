@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar"
 import HomeNews from "../components/home-news"
 import RecipesContainer from "../components/recipes-container"
+import SearchBar from "../components/search-bar"
 import FooterPage from "../components/footer-page"
 import meals from "../data-sim/recipes-meals.json"
 import pasta from "../data-sim/recipes-pasta.json"
@@ -11,6 +12,7 @@ export default function Home() {
             <Navbar />
             <HomeNews />
             <RecipesContainer title={meals.title} boxes={meals.boxes}/>
+            <SearchBar />
             <div className="img-background">
                 <section></section>
                 <article>
