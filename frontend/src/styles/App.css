@@ -73,6 +73,10 @@ footer {
     background: #fff5dd;
     padding: 15px;
 }
+footer img {
+    width: 100px;
+    height: auto;
+}
 
 
 /* - - - - - - home-navbar.tsx - - - - - - */
@@ -179,7 +183,7 @@ nav ul li:hover {
 .main-news {
     flex: 55%;
 }
-.main-news a, .other-news a, .recipe-box, .news-box, .search-bar-options div a {
+.main-news a, .other-news a, .recipe-box, .news-box, .search-bar-options div a, #account-nav a {
     color: inherit;
     text-decoration: none;
 }
@@ -448,4 +452,13 @@ nav ul li:hover {
 }
 .news-box-info aside {
     margin-bottom: 10px;
+}
+
+
+/* - - - - - - account-navbar.tsx - - - - - - */
+#account-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px;
+    list-style-type: none;
 }

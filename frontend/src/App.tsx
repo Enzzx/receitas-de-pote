@@ -7,7 +7,7 @@ export default function App() {
         <>
             <header><MainNavbar/></header>
             <main><Outlet /></main>
-            <footer>Logo</footer>
+            <footer><img src="logo.png" alt="logo" /></footer>
         </>
     )
 }
