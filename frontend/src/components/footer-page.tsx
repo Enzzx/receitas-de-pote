@@ -1,24 +1,19 @@
 export default function FooterPage() {
     return (
         <section className="footer">
-            <section>
-                <h3>seção</h3>
-                <p>coisa 1</p>
-                <p>coisa 2</p>
-                <p>coisa 3</p>
-            </section>
-            <section>
-                <h3>seção</h3>
-                <p>coisa 1</p>
-                <p>coisa 2</p>
-                <p>coisa 3</p>
-            </section>
-            <section>
-                <h3>seção</h3>
-                <p>coisa 1</p>
-                <p>coisa 2</p>
-                <p>coisa 3</p>
-            </section>
+            <div className="footer-content">
+                <img src="logo.png" alt="logo" />
+                <ul>
+                    <li>café da manhã</li>
+                    <li>lanches</li>
+                    <li>pratos típicos</li>
+                    <li>tradicional</li>
+                    <li>vegetarianos</li>
+                    <li>salgados</li>
+                    <li>sobremesas</li>
+                </ul>
+            </div>
+            <p>criado by <i><strong>Enzzx</strong></i></p>
         </section>  
     )
 }
