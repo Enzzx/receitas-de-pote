@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 export default function Navbar() {
     const [isShrunk, setIsShrunk] = useState<boolean>(false)
@@ -35,10 +36,10 @@ export default function Navbar() {
                     <input type="search" placeholder="pesquise uma receita"/>
                     <button type="submit"><img src="./icons/search.png" alt="search" /></button>
                 </form>
-                <div className="pfp">
+                <Link to="login" className="pfp">
                     <img src="./icons/account.png" alt="pfp" />
                     <p>username</p>
-                </div>
+                </Link>
             </section>
             <ul className={isShrunk ? "hide-nav-ul": ""}>
                 <li>café da manhã</li>

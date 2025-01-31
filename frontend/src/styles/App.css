@@ -183,7 +183,7 @@ nav ul li:hover {
 .main-news {
     flex: 55%;
 }
-.main-news a, .other-news a, .recipe-box, .news-box, .search-bar-options div a, #account-nav a {
+.main-news a, .other-news a, .recipe-box, .news-box, .search-bar-options div a, #account-nav a, .pfp {
     color: inherit;
     text-decoration: none;
 }
@@ -462,3 +462,59 @@ nav ul li:hover {
     padding: 5px 15px;
     list-style-type: none;
 }
+
+
+
+/* - - - - - - log-in.tsx - - - - - - */
+#login-page, #signin-page {
+    display: flex;
+    height: 100%;
+}
+#login-page .login-background, #signin-page .signin-background {
+    flex: 50%;
+    background-image: url("https://placehold.co/600x400");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#login-page > div, #signin-page > div {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#login-form, #signin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#login-form section:last-child {
+    margin-top: 10px;
+}
+#login-form input, #signin-form input {
+    width: 200px;
+    padding: 2px 5px;
+
+}
+#login-form input[type="submit"], #signin-form input[type="submit"] {
+    background: white;
+    border: solid 1px #c65f23;
+    border-radius: 2px;
+    transition: 0.2s ease;
+}
+#signin-form input[type="submit"] {
+    margin-top: 10px;
+}
+#login-form input[type="submit"]:hover, #signin-form input[type="submit"]:hover {
+    background: #c65f23;
+    color: white;
+}
+#login-form p {
+    font-size: 0.7em;
+}
+#login-form a {
+    color: inherit;
+    text-decoration: underline #569940;
+}
+
+/* - - - - - - sign-in.tsx - - - - - - */

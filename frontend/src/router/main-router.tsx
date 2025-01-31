@@ -6,6 +6,8 @@ import News from "../pages/news.tsx"
 import Home from "../pages/home.tsx"
 import Account from "../pages/account.tsx";
 import About from "../pages/about.tsx"
+import LogIn from "../pages/log-in.tsx";
+import SignIn from "../pages/sign-in.tsx";
 //SUBPAGES
 import ProfileSubPage from "../pages/subpages/profile-subpage.tsx";
 import RecipesSubPage from "../pages/subpages/recipes-subpage.tsx";
@@ -29,7 +31,9 @@ export const MainRouter = createBrowserRouter([
                     { path: "news", element: <NewsSubPage /> }
                 ]
             },
-            { path: "/about", element: <About /> }
+            { path: "/about", element: <About /> },
+            { path: "/login", element: <LogIn /> },
+            { path: "/signin", element: <SignIn /> }
         ]
     }
 ])
