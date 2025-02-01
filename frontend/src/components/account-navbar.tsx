@@ -3,9 +3,8 @@ import { NavLink } from "react-router-dom"
 export default function AccountNavbar() {
     return (
         <ul id="account-nav">
-            <li><NavLink to="">Perfil</NavLink></li>
-            <li><NavLink to="recipes">Receitas</NavLink></li>
-            <li><NavLink to="news">Notícias</NavLink></li>
+            <NavLink to="" className={({ isActive }) => (isActive ? "active-acc-nav" : "")} end><li>Perfil</li></NavLink>
+            <NavLink to="favorites" className={({ isActive }) => (isActive ? "active-acc-nav" : "")}><li>Favoritos</li></NavLink>
         </ul>
     )
 }

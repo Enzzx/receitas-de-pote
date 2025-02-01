@@ -41,6 +41,9 @@ header ul a {
     color: inherit;
     text-decoration: none;
 }
+header ul a:visited {
+    color: inherit;
+}
 header ul a img {
     width: 25px;
     height: 25px;
@@ -49,14 +52,10 @@ header ul a span {
     color: #3c4043;
     transition: 0.1s ease;
 }
-header ul a:hover span {
+header ul a:hover span, .active-page span {
     font-weight: 500;
     color: #272727;
 }
-header ul a:visited {
-    color: inherit;
-}
-
 
 main {
     position: relative;
@@ -267,7 +266,6 @@ nav ul li:hover {
     flex-wrap: wrap;
 }
 
-
 .recipe-box {
     position: relative;
     flex: 30%;
@@ -458,14 +456,20 @@ nav ul li:hover {
 /* - - - - - - account-navbar.tsx - - - - - - */
 #account-nav {
     display: flex;
-    justify-content: space-between;
-    padding: 5px 15px;
+    justify-content: flex-end;
+    margin: 40px 80px 0 80px;
     list-style-type: none;
+}
+.active-acc-nav {
+    border-bottom: solid 2px #569940;
+}
+#account-nav li {
+    text-align: center;
+    padding: 2px 10px;
 }
 
 
-
-/* - - - - - - log-in.tsx - - - - - - */
+/* - - - - - - log-in.tsx, sign-in.tsx - - - - - - */
 #login-page, #signin-page {
     display: flex;
     height: 100%;
@@ -516,5 +520,86 @@ nav ul li:hover {
     color: inherit;
     text-decoration: underline #569940;
 }
+#login-form a:hover {
+    color: #569940;
+}
 
-/* - - - - - - sign-in.tsx - - - - - - */
+
+/* - - - - - - profile-subpage.tsx - - - - - - */
+#profile {
+    margin: 10px 30px;
+}
+#profile-user {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+#profile-info {
+    flex: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#profile-info img {
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+}
+#profile-data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #393939;
+}
+#profile-data h3 {
+    font-weight: 400;
+}
+#profile-data button {
+    background: #a9cea9;
+    color: white;
+    padding: 2px 4px;
+    border:solid 1px #569940;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#profile-data button:hover {
+    background: #93be93;
+}
+.profile-count {
+    display: flex;
+    gap: 10px;
+}
+.profile-count p {
+    font-size: 0.8em;
+}
+
+#profile-recipes-container {
+    flex: 75%;
+}
+#profile-recipes-container input {
+    width: 50%;
+    padding: 3px 10px;
+    margin-bottom: 15px;
+}
+#profile-recipes-container > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+#profile-recipes-container div .recipe-box {
+    border-top: solid 1px #8bbd8b;
+    border-radius: 0;
+}
+#profile-recipes-container .recipe-box:hover {
+    background: inherit;
+}
+#profile-recipes-container .recipe-box img {
+    display: none;
+}
+#profile-recipes-container .recipe-box-info {
+    padding: 15px 0;
+}
+
+#profile-sys {
+    text-align: center;
+}
