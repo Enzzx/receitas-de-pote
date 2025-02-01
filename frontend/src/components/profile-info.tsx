@@ -14,12 +14,16 @@ export default function ProfileInfo(props: ProfileInfo) {
             <img src={img} alt="profile pic" />
             <section id="profile-data">
                 <h3>{username}</h3>
-                <button>Edit profile</button>
+                <button>Editar perfil</button>
                 <section className="profile-count">
-                    <p>Recipes: {recipes}</p>
-                    <p>News: {news}</p>
+                    <p>Receitas: {recipes}</p>
+                    <p>Notícias: {news}</p>
                 </section>
             </section>
+            <div id="profile-sys">
+                <button>sair da conta</button>
+                <button>apagar conta</button>
+            </div>
         </div>
     )
 }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 
 export default function Navbar() {
     const [isShrunk, setIsShrunk] = useState<boolean>(false)
+    const mobile: boolean = window.innerWidth < 650
 
     //shrink and unshrink the navbar
     useEffect(() => {
@@ -29,19 +30,19 @@ export default function Navbar() {
     }, [])
 
     return (
-        <nav className={isShrunk ? "shrink" : ""}>
+        <nav className={isShrunk || mobile ? "shrink" : ""}>
             <section>
-                <img src="./icons/menu.png" alt="menu" />
+                <img src="./icons/menu.png" alt="menu" className={!mobile ? "hide" : ""}/>
                 <form className="search-bar">
                     <input type="search" placeholder="pesquise uma receita"/>
-                    <button type="submit"><img src="./icons/search.png" alt="search" /></button>
+                    <button type="submit" className={mobile ? "hide" : ""}><img src="./icons/search.png" alt="search" /></button>
                 </form>
                 <Link to="login" className="pfp">
                     <img src="./icons/account.png" alt="pfp" />
-                    <p>username</p>
+                    <p className={mobile ? "hide" : ""}>username</p>
                 </Link>
             </section>
-            <ul className={isShrunk ? "hide-nav-ul": ""}>
+            <ul className={isShrunk || mobile ? "hide": ""}>
                 <li>café da manhã</li>
                 <li>lanches</li>
                 <li>pratos típicos</li>

@@ -1,6 +1,6 @@
 export default function NewsMain() {
     return (
-        <section className="news-main">
+        <section id="news-main">
             <h1>Notícias e tendências sobre culinária</h1>
             <p>Encontre notícias sobre produtos, famosos, empresas e  outras notícias de gastronomia </p>
             <ul>
