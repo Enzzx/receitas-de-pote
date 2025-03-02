@@ -1,45 +1,33 @@
 package main
 
 import (
-    "context"
-    "fmt"
     "log"
-    "os"
     "net/http"
+    "time"
 
-    "github.com/joho/godotenv"
-    "github.com/jackc/pgx/v5"
+    "backend/config"
+    "backend/middleware"
 )
 
 
 func main() {
     //conectando ao banco de dados
-    err := godotenv.Load()
+    config.ConnectDB()
+    defer config.CloseDB()
 
-    dbHost := os.Getenv("PGHOST")
-    dbUser := os.Getenv("PGUSER")
-    dbPassword := os.Getenv("PGPASSWORD")
-    dbName := os.Getenv("PGDATABASE")
-    dbPort := os.Getenv("PGPORT")
 
-    dsn := fmt.Sprintf("postgres://%s:%s@%s:%s/%s", dbUser, dbPassword, dbHost, dbPort, dbName)
+    // server
+    mux := http.NewServeMux()
+    registerRoutes(mux)
 
-    conn, err := pgx.Connect(context.Background(), dsn)
-    if err != nil {
-        log.Fatalf("erro ao conectar ao banco de dados: %v", err)
+    server := &http.Server {
+        Addr: ":8080",
+        Handler: middleware.LoggingHandler(mux),
+        ReadTimeout: 5 * time.Second,
+        WriteTimeout: 10 * time.Second,
+        IdleTimeout: 20 * time.Second,
     }
-    defer conn.Close(context.Background())
 
-    fmt.Println("conexão com o banco de dados bem-sucedida")
-
-
-
-    //endpoints
-    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        w.Header().Set("Access-Control-Allow-Origin", "*")
-        fmt.Fprintf(w, "Hello, Go backend!")
-    })
-
-    log.Println("Servidor iniciado em http://localhost:8080")
-    log.Fatal(http.ListenAndServe(":8080", nil))
+    log.Println("Servidor iniciado na porta " + server.Addr)
+    log.Fatal(server.ListenAndServe())
 }
