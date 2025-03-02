@@ -1,0 +1,16 @@
+{
+    "name": "Receitas de Pote",
+    "short_name": "Receitas Web",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FFF5E1",
+    "theme_color": "#D99873",
+    "icons": [
+      {
+        "src": "/logo.png",
+        "sizes": "709x709",
+        "type": "image/png"
+      }
+    ]
+  }
+  

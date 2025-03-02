@@ -3,6 +3,9 @@ import MainNavbar from "./components/main-navbar.tsx"
 import "./styles/App.css"
 
 export default function App() {
+
+    document.body.style.height = `${window.innerHeight}`
+    
     return (
         <>
             <header><MainNavbar/></header>
