@@ -29,7 +29,6 @@ func ConnectDB() {
         log.Fatalf("erro ao conectar ao banco de dados: %v", err)
     }
 	DB = conn
-    defer conn.Close(context.Background())
 
     fmt.Println("conexão com o banco de dados bem-sucedida")
 }

@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+// info in server request log
 func LoggingHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		start := time.Now()

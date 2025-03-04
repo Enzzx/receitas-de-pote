@@ -1,12 +1,12 @@
 package main
 
 import (
-    "log"
-    "net/http"
-    "time"
+	"log"
+	"net/http"
+	"time"
 
-    "backend/config"
-    "backend/middleware"
+	"backend/config"
+	"backend/middleware"
 )
 
 
@@ -24,8 +24,8 @@ func main() {
         Addr: ":8080",
         Handler: middleware.LoggingHandler(mux),
         ReadTimeout: 5 * time.Second,
-        WriteTimeout: 10 * time.Second,
-        IdleTimeout: 20 * time.Second,
+        WriteTimeout: 5 * time.Second,
+        IdleTimeout: 10 * time.Second,
     }
 
     log.Println("Servidor iniciado na porta " + server.Addr)
