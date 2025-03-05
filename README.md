@@ -1,6 +1,6 @@
-# RecipesBook
+# receitas-de-pote
 
-recipes book is a web app where you can save and search for recipes and make shopping lists
+receitas-de-pote is a web site where you can save and search for recipes and news of the word of gastronomy
 
 ## languages used:
 * React/Typescript
