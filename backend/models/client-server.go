@@ -12,7 +12,6 @@ type LoginReq struct {
 }
 
 type User struct {
-	Id       int
 	Username string
 	PHash    string
 }
@@ -24,6 +23,6 @@ type HttpAccBody struct {
 }
 
 type Claims struct {
-	Username string `"json":"username"`
+	Username string
 	jwt.RegisteredClaims
 }

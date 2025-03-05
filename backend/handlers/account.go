@@ -4,8 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"time"
-
 	"github.com/jackc/pgx/v5"
 
 	"backend/models"
@@ -66,17 +64,21 @@ func LogIn(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// generating jwt token and caching in cookies
 	token, _ := utils.GenerateJWT(user.Username)
 
-	http.SetCookie(w, &http.Cookie{
-		Name: "token",
-		Value: token,
-		Path: "/",
-		Expires: time.Now().Add(7 * 24 * time.Hour),
-	})
-
-	parsedHttp, _ := utils.HttpBody(true, "login efetuado com sucesso", "")
+	parsedHttp, _ := utils.HttpBody(true, "login efetuado com sucesso", token)
 	w.WriteHeader(http.StatusOK)
 	fmt.Fprint(w, parsedHttp)
+}
+
+func UserInfo(w http.ResponseWriter, r *http.Request) {
+	username := r.Context().Value("username").(string)
+
+	parsedHttp, _ := utils.HttpBody(true, "valor de token válido", username)
+	w.WriteHeader(http.StatusOK)
+	fmt.Fprint(w, parsedHttp)
+}
+
+func UserProfile(w http.ResponseWriter, r *http.Request) {
+	
 }
