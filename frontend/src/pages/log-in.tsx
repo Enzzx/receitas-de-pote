@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom"
+import React, { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import Cookies from "js-cookie"
 
 type HttpAccBody = {
     Message: string
@@ -8,17 +9,19 @@ type HttpAccBody = {
 }
 
 export default function LogIn() {
+    const [errMessage, setErrMessage] = useState<string | undefined>()
+    const navigate = useNavigate()
 
+    // login and store jwt in cookies
     async function loginSubmit(e: React.FormEvent) {
         e.preventDefault()
-
+        
         const username = (document.querySelector("#login-username") as HTMLInputElement)?.value
         const password = (document.querySelector("#login-password") as HTMLInputElement)?.value
-
+        
         const head = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            credentials: "include" as RequestCredentials,
             body: JSON.stringify({ username, password })
         }
 
@@ -28,7 +31,10 @@ export default function LogIn() {
 
             console.log(res.Message)
             if (res.Succesfull) {
-                console.log("sucesso")
+                Cookies.set("jwt", res.Data, { expires: 7})
+                navigate("/")
+            } else {
+                setErrMessage(res.Message)
             }
         } catch (err) {
             throw err
@@ -42,12 +48,18 @@ export default function LogIn() {
                 <form id="login-form" onSubmit={loginSubmit}>
                     <section>
                         <label htmlFor="login-username">Nome:</label><br />
-                        <input type="text" id="login-username" placeholder="Insira seu nome" />
+                        <input type="text" id="login-username" placeholder="Insira seu nome" 
+                        required />
                     </section>
                     <section>
                         <label htmlFor="login-password">Senha:</label><br />
-                        <input type="text" id="login-password" placeholder="Insira sua senha" />
+                        <input type="text" id="login-password" placeholder="Insira sua senha" 
+                        required />
                     </section>
+                    {
+                        typeof(errMessage) != undefined ? 
+                        <p>{errMessage}</p> : <p></p>
+                    }
                     <section>
                         <input type="submit" value="Entrar" />
                         <p>Não possui uma conta? crie uma <Link to="../signin">agora</Link></p>
