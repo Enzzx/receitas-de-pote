@@ -11,7 +11,7 @@ import (
 
 
 func main() {
-    //conectando ao banco de dados
+    // connecting to DB
     config.ConnectDB()
     defer config.CloseDB()
 
@@ -20,9 +20,10 @@ func main() {
     mux := http.NewServeMux()
     registerRoutes(mux)
 
+    middlewareHandle := middleware.Cors(middleware.LoggingHandler(mux))
     server := &http.Server {
         Addr: ":8080",
-        Handler: middleware.LoggingHandler(mux),
+        Handler: middlewareHandle,
         ReadTimeout: 5 * time.Second,
         WriteTimeout: 5 * time.Second,
         IdleTimeout: 10 * time.Second,
