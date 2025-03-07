@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
-export default function Navbar() {
+export default function Navbar({ username }: { username: string | null }) {
     const [isShrunk, setIsShrunk] = useState<boolean>(false)
     const mobile: boolean = window.innerWidth < 650
+    //const username = sessionStorage.getItem("username")
 
     //shrink and unshrink the navbar
     useEffect(() => {
@@ -37,9 +38,9 @@ export default function Navbar() {
                     <input type="search" placeholder="pesquise uma receita"/>
                     <button type="submit" className={mobile ? "hide" : ""}><img src="./icons/search.png" alt="search" /></button>
                 </form>
-                <Link to="login" className="pfp">
+                <Link to={username != null ? 'account' : 'login'} className="pfp">
                     <img src="./icons/account.png" alt="pfp" />
-                    <p className={mobile ? "hide" : ""}>username</p>
+                    <p className={mobile ? "hide" : ""}>{username != null ? username : 'Conecte-se'}</p>
                 </Link>
             </section>
             <ul className={isShrunk || mobile ? "hide": ""}>

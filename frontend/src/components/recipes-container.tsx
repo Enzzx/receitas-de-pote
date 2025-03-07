@@ -1,11 +1,7 @@
-import RecipeBox , { RecipeData } from "./recipe-box";
+import RecipeBox from "./recipe-box";
+import { Recipe } from "../models"
 
-type Props = {
-    title: string;
-    boxes: RecipeData[];
-}
-
-export default function RecipesContainer(props: Props) {
+export default function RecipesContainer(props: Recipe) {
     const { title, boxes } = props
 
     return (

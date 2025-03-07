@@ -1,12 +1,6 @@
-export type ProfileInfo = {
-    id: number;
-    img: string;
-    username: string;
-    recipes: number;
-    news: number;
-}
+import { UserProfile } from "../models"
 
-export default function ProfileInfo(props: ProfileInfo) {
+export default function ProfileInfo(props: UserProfile) {
     const { img, username, recipes, news } = props
 
     return (

@@ -1,11 +1,4 @@
-export type RecipeData = {
-    id: number;
-    image: string;
-    title: string;
-    caption: string;
-    rate: number;
-    path: string;
-}
+import { RecipeData } from "../models"
 
 export default function RecipeBox(props: RecipeData) {
     let { image, title, caption, rate, path } = props

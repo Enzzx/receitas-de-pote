@@ -1,12 +1,7 @@
 import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import Cookies from "js-cookie"
-
-type HttpAccBody = {
-    Message: string
-    Succesfull: boolean
-    Data: string
-}
+import { HttpAccBody } from "../models"
 
 export default function LogIn() {
     const [errMessage, setErrMessage] = useState<string | undefined>()
@@ -32,6 +27,7 @@ export default function LogIn() {
             console.log(res.Message)
             if (res.Succesfull) {
                 Cookies.set("jwt", res.Data, { expires: 7})
+                sessionStorage.clear()
                 navigate("/")
             } else {
                 setErrMessage(res.Message)
@@ -56,10 +52,7 @@ export default function LogIn() {
                         <input type="text" id="login-password" placeholder="Insira sua senha" 
                         required />
                     </section>
-                    {
-                        typeof(errMessage) != undefined ? 
-                        <p>{errMessage}</p> : <p></p>
-                    }
+                    <p>{typeof(errMessage) != undefined ? errMessage : ""}</p>
                     <section>
                         <input type="submit" value="Entrar" />
                         <p>Não possui uma conta? crie uma <Link to="../signin">agora</Link></p>

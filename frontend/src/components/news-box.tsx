@@ -1,12 +1,4 @@
-export type News = {
-    id: number;
-    title: string;
-    caption: string;
-    image: string;
-    topic: string;
-    post_date: string;
-    path: string;
-}
+import { News } from "../models"
 
 export default function NewsBox(props: News) {
     let { title, image, topic, post_date, path } = props
