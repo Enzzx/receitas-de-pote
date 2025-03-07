@@ -7,7 +7,7 @@ import FooterPage from "../components/footer-page"
 export default function News() {
     return (
         <>
-            <Navbar />
+            <Navbar username={sessionStorage.getItem("username")}/>
             <NewsMain />
             <SearchBar />
             <NewsContainer />

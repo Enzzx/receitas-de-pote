@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import news from "../data-sim/home-news.json"
-import { News } from "./news-box"
+import { News } from "../models"
 
 export default function HomeNews() {
     const [mainNews, setMainNews] = useState<News | null>(null)
