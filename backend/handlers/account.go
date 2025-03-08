@@ -80,5 +80,21 @@ func UserInfo(w http.ResponseWriter, r *http.Request) {
 }
 
 func UserProfile(w http.ResponseWriter, r *http.Request) {
-	
+	// falta fazer
+}
+
+func DeleteAccount(w http.ResponseWriter, r *http.Request) {
+	var username string
+	_ = json.NewDecoder(r.Body).Decode(&username)
+
+	err := requests.DeleteUser(username)
+	if err != nil {
+		parsedHttp, _ := utils.HttpBody(false, "a conta não pôde ser deletada", "")
+		http.Error(w, parsedHttp, http.StatusInternalServerError)
+		return
+	}
+
+	parsedHttp, _ := utils.HttpBody(true, "conta deletada com sucesso", "")
+	w.WriteHeader(http.StatusOK)
+	fmt.Fprint(w, parsedHttp)
 }
