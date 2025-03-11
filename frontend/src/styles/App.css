@@ -487,7 +487,7 @@ nav ul li:hover {
 #login-form, #signin-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 #login-form section:last-child {
     margin-top: 10px;
@@ -521,6 +521,39 @@ nav ul li:hover {
     color: #569940;
 }
 
+/* - - - - - - account.tsx - - - - - - */
+.to-login-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 40vw;
+    min-width: 150px;
+    max-width: 350px;
+    padding: 40px 15px;
+    border: dashed 5px #ef7e3d;
+    border-radius: 5px;
+}
+.to-login-message p {
+    color: #e88e59;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.to-login-message button {
+    background: transparent;
+    color: black;
+    width: 80%;
+    padding: 5px 0;
+    margin: 5px 0;
+    border: solid 1px #ef7e3d;
+    border-radius: 2px;
+    transition: 0.1s;
+}
+.to-login-message button:hover {
+    background: #ef7e3d;
+    color: white;
+}
 
 /* - - - - - - profile-subpage.tsx - - - - - - */
 #profile {
@@ -610,6 +643,7 @@ nav ul li:hover {
 #profile-recipes-container .recipe-box-info {
     padding: 15px 0;
 }
+
 
 
 /* - - - - - - responsive layout - - - - - - */
@@ -703,6 +737,10 @@ nav ul li:hover {
     }
     #profile-recipes-container input {
         width: 100%;
+    }
+
+    #account-nav {
+        justify-content: center;
     }
 
     #login-page, #signin-page {
