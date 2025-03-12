@@ -1,52 +1,45 @@
 {
-    "profileInfo": {
-      "id": 1,
-      "img": "https://placehold.co/50x50",
-      "username": "ChefGourmet",
-      "recipes": 5,
-      "news": 2
-    },
-    "recipes": [
+  "profileInfo": {
+    "id": 1,
+    "img": "https://placehold.co/50x50",
+    "username": "ChefGourmet",
+    "recipesCount": 5,
+    "recipesBox": [
       {
         "id": 1,
         "image": "https://placehold.co/600x400",
         "title": "Feijoada",
         "caption": "A feijoada é um prato principal tradicional brasileiro, preparado com feijão preto, carnes como costela de porco, linguiça, carne seca, além de arroz branco, farofa, couve refogada e fatias de laranja. É um prato saboroso e bastante nutritivo, geralmente servido em grandes reuniões familiares aos sábados.",
-        "rate": 4.9,
-        "path": "#"
+        "slug": "#"
       },
       {
         "id": 2,
         "image": "https://placehold.co/600x400",
         "title": "Baião de Dois",
         "caption": "O Baião de Dois é uma deliciosa combinação de arroz e feijão verde ou feijão de corda, misturado com carne de sol ou charque e queijo coalho. Prato típico do nordeste brasileiro, é um dos maiores símbolos da gastronomia nordestina, conhecido pelo seu sabor marcante e preparo simples.",
-        "rate": 4.8,
-        "path": "#"
+        "slug": "#"
       },
       {
         "id": 3,
         "image": "https://placehold.co/600x400",
         "title": "Moqueca Capixaba",
         "caption": "A Moqueca Capixaba é um prato típico do Espírito Santo, preparado com peixe fresco, azeite de oliva, tomates, pimentões, cebolas e coentro, sem o uso de azeite de dendê e leite de coco, como na versão baiana. A moqueca capixaba é mais leve, com um sabor marcante e frescor que conquista todos os paladares.",
-        "rate": 5,
-        "path": "#"
+        "slug": "#"
       },
       {
         "id": 4,
         "image": "https://placehold.co/600x400",
         "title": "Frango com Quiabo",
         "caption": "O frango com quiabo é um prato típico da culinária mineira, muito saboroso e simples de preparar. O frango é cozido com quiabo, alho, cebola e temperos, criando um caldo espesso e saboroso. O prato é geralmente servido com arroz branco e angu, representando a comida típica do interior de Minas Gerais.",
-        "rate": 4.7,
-        "path": "#"
+        "slug": "#"
       },
       {
         "id": 5,
         "image": "https://placehold.co/600x400",
         "title": "Carne de Sol com Nhoque",
         "caption": "A carne de sol com nhoque é uma mistura saborosa de carne de sol desfiada acompanhada de nhoque, geralmente servido com molho de tomate e queijo coalho. É um prato típico do nordeste e do norte de Minas Gerais, que combina o sabor da carne salgada com a suavidade do nhoque.",
-        "rate": 4.8,
-        "path": "#"
+        "slug": "#"
       }
     ]
   }
-  
+}

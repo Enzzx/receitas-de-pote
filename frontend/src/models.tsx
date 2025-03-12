@@ -1,9 +1,3 @@
-export type HttpAccBody = {
-    Message: string
-    Succesfull: boolean
-    Data: string
-}
-
 export type Recipe = {
     title: string;
     boxes: RecipeData[];
@@ -14,16 +8,13 @@ export type RecipeData = {
     image: string;
     title: string;
     caption: string;
-    rate: number;
-    path: string;
+    slug: string;
 }
 
 export type UserProfile = {
-    id: number;
     img: string;
     username: string;
-    recipes: number;
-    news: number;
+    recipesCount: number;
 }
 
 export type News = {
@@ -34,4 +25,19 @@ export type News = {
     topic: string;
     post_date: string;
     path: string;
+}
+
+export type HttpAccBody = {
+    Message: string
+    Succesfull: boolean
+    Data: string
+}
+
+export type HttpProfileBody = {
+    Message: string
+    Succesfull: boolean
+    Data: {
+        Profile: UserProfile
+        Recipes: RecipeData[]
+    }
 }

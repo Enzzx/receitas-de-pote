@@ -14,7 +14,7 @@ export default function ProfileRecipesContainer(props: Props) {
             <div>
                 {boxes.map(box => {
                     return (
-                        <RecipeBox key={box.id} id={box.id} image={box.image} title={box.title} caption={box.caption} rate={box.rate} path={box.path}/>
+                        <RecipeBox key={box.id} id={box.id} image={box.image} title={box.title} caption={box.caption} slug={box.slug}/>
                     )
                 })}
             </div>

@@ -3,7 +3,7 @@ import Cookies from "js-cookie"
 import { UserProfile, HttpAccBody } from "../models"
 
 export default function ProfileInfo(props: UserProfile) {
-    const { img, username, recipes, news } = props
+    const { img, username, recipesCount } = props
     const navigate = useNavigate()
 
     function clearLogin() {
@@ -40,8 +40,7 @@ export default function ProfileInfo(props: UserProfile) {
                 <h3>{username}</h3>
                 <button>Editar perfil</button>
                 <section className="profile-count">
-                    <p>Receitas: {recipes}</p>
-                    <p>Notícias: {news}</p>
+                    <p>Receitas: {recipesCount}</p>
                 </section>
             </section>
             <div id="profile-sys">

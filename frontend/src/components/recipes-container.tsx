@@ -10,7 +10,7 @@ export default function RecipesContainer(props: Recipe) {
             <div className="recipes">
                 {boxes.map(box => {
                     return (
-                        <RecipeBox id={box.id} key={box.id} image={box.image} title={box.title} caption={box.caption} rate={box.rate} path={box.path}/>
+                        <RecipeBox id={box.id} key={box.id} image={box.image} title={box.title} caption={box.caption} slug={box.slug}/>
                     )
                 })}
             </div>
