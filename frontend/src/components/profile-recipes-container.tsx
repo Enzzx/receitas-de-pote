@@ -8,9 +8,25 @@ type Props = {
 export default function ProfileRecipesContainer(props: Props) {
     const { boxes } = props
 
+    function filterRecipes(e: React.FormEvent<HTMLInputElement>) {
+        const titles = document.querySelectorAll(".recipe-title")
+
+        titles.forEach((title: Element) => {
+            const closestLink = title.closest("a")
+
+            if (closestLink) {
+                if (title.textContent?.toLowerCase().indexOf(e.currentTarget.value.toLowerCase()) !== -1) {
+                    closestLink.style.display = "block"
+                } else {
+                    closestLink.style.display = "none"
+                }
+            }
+        })
+    }
+
     return (
         <div id="profile-recipes-container">
-            <input type="text" placeholder="Procure por uma receita"/>
+            <input type="text" placeholder="Procure por uma receita" onInput={filterRecipes}/>
             <div>
                 {boxes != null ? boxes.map(box => {
                     return (

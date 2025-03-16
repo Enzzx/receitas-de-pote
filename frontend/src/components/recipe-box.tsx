@@ -19,7 +19,7 @@ export default function RecipeBox(props: RecipeData) {
         <a href={Slug} className="recipe-box">
             <img src={Image} alt={Title} />
             <div className="recipe-box-info">
-                <h3>{Title}</h3>
+                <h3 className="recipe-title">{Title}</h3>
                 <p>{reticence(Description)}</p>
                 <p>4.5</p>
             </div>
