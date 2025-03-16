@@ -25,15 +25,15 @@ type HttpAccBody struct {
 type UserProfile struct {
 	Username     string
 	ProfilePic   string
-	recipesCount int
+	RecipesCount int
 }
 
 type RecipeData struct {
-	Id      int
-	Image   string
-	Title   string
-	Caption string
-	Slug    string
+	Id          int
+	Image       string
+	Title       string
+	Description string
+	Slug        string
 }
 
 type HttpProfileBody struct {
