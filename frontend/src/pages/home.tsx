@@ -18,6 +18,7 @@ export default function Home() {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}`}
         }
+        
         try {
             const req = await fetch(import.meta.env.VITE_BACKEND_URL + "/user/info", head)
             const res: HttpAccBody = await req.json()
@@ -47,7 +48,7 @@ export default function Home() {
     useEffect(() => {
         const username = sessionStorage.getItem("username")
         const jwt = Cookies.get("jwt")
-        if (username == null && jwt != null) {
+        if (username == null && jwt != undefined) {
             getUsername(jwt)
         }
 
@@ -60,7 +61,7 @@ export default function Home() {
         <>
             <Navbar username={sessionStorage.getItem("username")}/>
             <HomeNews />
-            <RecipesContainer title={meals.title} boxes={meals.boxes}/>
+            <RecipesContainer Title={meals.Title} Boxes={meals.Boxes}/>
             <SearchBar />
             <div className="img-background">
                 <section></section>
@@ -69,7 +70,7 @@ export default function Home() {
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo dicta nulla non quae labore repellat facilis nesciunt quod doloribus, totam sit.</p>
                 </article>
             </div>
-            <RecipesContainer title={pasta.title} boxes={pasta.boxes}/>
+            <RecipesContainer Title={pasta.Title} Boxes={pasta.Boxes}/>
             <FooterPage />
         </>
     )

@@ -1,53 +1,53 @@
 {
-    "title": "Massas",
-    "boxes": [
+    "Title": "Massas",
+    "Boxes": [
       {
-        "id": 1,
-        "image": "https://placehold.co/600x400",
-        "title": "Spaghetti alla Carbonara",
-        "caption": "A Carbonara é um prato típico da culinária italiana, originário de Roma. Feita com espaguete, ovos, queijo pecorino romano, guanciale (ou pancetta) e pimenta-do-reino, a receita é simples, mas oferece uma explosão de sabor. Ideal para um jantar rápido e delicioso.",
-        "rate": 4.9,
-        "path": "#"
+        "Id": 1,
+        "Image": "https://placehold.co/600x400",
+        "Title": "Spaghetti alla Carbonara",
+        "Description": "A Carbonara é um prato típico da culinária italiana, originário de Roma. Feita com espaguete, ovos, queijo pecorino romano, guanciale (ou pancetta) e pimenta-do-reino, a receita é simples, mas oferece uma explosão de sabor. Ideal para um jantar rápido e delicioso.",
+        "Rate": 4.9,
+        "Slug": "#"
       },
       {
-        "id": 2,
-        "image": "https://placehold.co/600x400",
-        "title": "Lasanha à Bolonhesa",
-        "caption": "A lasanha à bolonhesa é uma das receitas mais tradicionais da Itália. Camadas de massa de lasanha intercaladas com molho bolonhesa, molho branco e queijo derretido fazem deste prato uma verdadeira iguaria. Perfeita para grandes almoços e jantares em família.",
-        "rate": 5,
-        "path": "#"
+        "Id": 2,
+        "Image": "https://placehold.co/600x400",
+        "Title": "Lasanha à Bolonhesa",
+        "Description": "A lasanha à bolonhesa é uma das receitas mais tradicionais da Itália. Camadas de massa de lasanha intercaladas com molho bolonhesa, molho branco e queijo derretido fazem deste prato uma verdadeira iguaria. Perfeita para grandes almoços e jantares em família.",
+        "Rate": 5,
+        "Slug": "#"
       },
       {
-        "id": 3,
-        "image": "https://placehold.co/600x400",
-        "title": "Macarrão com Pesto de Manjericão",
-        "caption": "Originário da Ligúria, no noroeste da Itália, o pesto é um molho feito com manjericão fresco, alho, pinolis, queijo parmesão, azeite de oliva e sal. O macarrão é cozido e misturado com o pesto, criando um prato fresco e cheio de sabor.",
-        "rate": 4.8,
-        "path": "#"
+        "Id": 3,
+        "Image": "https://placehold.co/600x400",
+        "Title": "Macarrão com Pesto de Manjericão",
+        "Description": "Originário da Ligúria, no noroeste da Itália, o pesto é um molho feito com manjericão fresco, alho, pinolis, queijo parmesão, azeite de oliva e sal. O macarrão é cozido e misturado com o pesto, criando um prato fresco e cheio de sabor.",
+        "Rate": 4.8,
+        "Slug": "#"
       },
       {
-        "id": 4,
-        "image": "https://placehold.co/600x400",
-        "title": "Ramen",
-        "caption": "O ramen é um prato japonês que consiste em um caldo saboroso (geralmente de carne ou frango) com macarrão, ovos cozidos, vegetais e carne fatiada. Existem diversas variações regionais do ramen no Japão, sendo uma opção versátil e reconfortante.",
-        "rate": 4.7,
-        "path": "#"
+        "Id": 4,
+        "Image": "https://placehold.co/600x400",
+        "Title": "Ramen",
+        "Description": "O ramen é um prato japonês que consiste em um caldo saboroso (geralmente de carne ou frango) com macarrão, ovos cozidos, vegetais e carne fatiada. Existem diversas variações regionais do ramen no Japão, sendo uma opção versátil e reconfortante.",
+        "Rate": 4.7,
+        "Slug": "#"
       },
       {
-        "id": 5,
-        "image": "https://placehold.co/600x400",
-        "title": "Pad Thai",
-        "caption": "O Pad Thai é um prato tradicional tailandês, feito com macarrão de arroz, camarões ou frango, ovos, broto de feijão, amendoim e molho agridoce. É uma mistura perfeita de sabores salgados, doces, azedos e picantes, e é uma das comidas de rua mais populares na Tailândia.",
-        "rate": 4.8,
-        "path": "#"
+        "Id": 5,
+        "Image": "https://placehold.co/600x400",
+        "Title": "Pad Thai",
+        "Description": "O Pad Thai é um prato tradicional tailandês, feito com macarrão de arroz, camarões ou frango, ovos, broto de feijão, amendoim e molho agridoce. É uma mistura perfeita de sabores salgados, doces, azedos e picantes, e é uma das comidas de rua mais populares na Tailândia.",
+        "Rate": 4.8,
+        "Slug": "#"
       },
       {
-        "id": 6,
-        "image": "https://placehold.co/600x400",
-        "title": "Macarrão com Alho e Óleo",
-        "caption": "Simples, rápido e delicioso, o macarrão com alho e óleo é uma receita clássica italiana. Feito com alho frito no azeite de oliva e misturado com o macarrão de sua escolha, é um prato leve e cheio de sabor, perfeito para quem busca algo rápido e saboroso.",
-        "rate": 4.6,
-        "path": "#"
+        "Id": 6,
+        "Image": "https://placehold.co/600x400",
+        "Title": "Macarrão com Alho e Óleo",
+        "Description": "Simples, rápido e delicioso, o macarrão com alho e óleo é uma receita clássica italiana. Feito com alho frito no azeite de oliva e misturado com o macarrão de sua escolha, é um prato leve e cheio de sabor, perfeito para quem busca algo rápido e saboroso.",
+        "Rate": 4.6,
+        "Slug": "#"
       }
     ]
   }

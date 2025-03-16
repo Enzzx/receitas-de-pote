@@ -3,7 +3,7 @@ import Cookies from "js-cookie"
 import { UserProfile, HttpAccBody } from "../models"
 
 export default function ProfileInfo(props: UserProfile) {
-    const { img, username, recipesCount } = props
+    const { Img, Username, RecipesCount } = props
     const navigate = useNavigate()
 
     function clearLogin() {
@@ -35,12 +35,12 @@ export default function ProfileInfo(props: UserProfile) {
 
     return (
         <div id="profile-info">
-            <img src={img} alt="profile pic" />
+            <img src={Img == undefined ? "https://placehold.co/50x50" : Img} alt="profile pic" />
             <section id="profile-data">
-                <h3>{username}</h3>
+                <h3>{Username}</h3>
                 <button>Editar perfil</button>
                 <section className="profile-count">
-                    <p>Receitas: {recipesCount}</p>
+                    <p>Receitas: {RecipesCount}</p>
                 </section>
             </section>
             <div id="profile-sys">

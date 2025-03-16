@@ -31,22 +31,22 @@ export default function HomeNews() {
     return (
         <section id="home-news">
             <article className="main-news">
-                <a href={mainNews.path}>
-                    <img src={mainNews.image} alt="main's news thumb"/>
-                    <h2>{mainNews.title}</h2>
-                    <p>{mainNews.caption}</p>
+                <a href={mainNews.Path}>
+                    <img src={mainNews.Image} alt="main's news thumb"/>
+                    <h2>{mainNews.Title}</h2>
+                    <p>{mainNews.Caption}</p>
                 </a>
             </article>
             <section className="other-news">
                 <h3>Últimas notícias</h3>
                 {otherNews.map(noticia => (
-                    <a href={noticia.path} key={noticia.id}>
-                        <img src={noticia.image} alt="news thumb" />
+                    <a href={noticia.Path} key={noticia.Id}>
+                        <img src={noticia.Image} alt="news thumb" />
                         <div className="home-news-box-info">
-                            <h4>{noticia.title}</h4>
+                            <h4>{noticia.Title}</h4>
                             <aside>
-                                <p>{noticia.topic}</p>
-                                <p>{getTimeFromDate(noticia.post_date)}</p>
+                                <p>{noticia.Topic}</p>
+                                <p>{getTimeFromDate(noticia.Post_date)}</p>
                             </aside>
                         </div>
                     </a>

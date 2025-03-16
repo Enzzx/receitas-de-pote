@@ -1,30 +1,30 @@
 export type Recipe = {
-    title: string;
-    boxes: RecipeData[];
+    Title: string;
+    Boxes: RecipeData[];
 }
 
 export type RecipeData = {
-    id: number;
-    image: string;
-    title: string;
-    caption: string;
-    slug: string;
+    Id: number;
+    Image: string;
+    Title: string;
+    Description: string;
+    Slug: string;
 }
 
 export type UserProfile = {
-    img: string;
-    username: string;
-    recipesCount: number;
+    Img: string;
+    Username: string;
+    RecipesCount: number;
 }
 
 export type News = {
-    id: number;
-    title: string;
-    caption: string;
-    image: string;
-    topic: string;
-    post_date: string;
-    path: string;
+    Id: number;
+    Title: string;
+    Caption: string;
+    Image: string;
+    Topic: string;
+    Post_date: string;
+    Path: string;
 }
 
 export type HttpAccBody = {

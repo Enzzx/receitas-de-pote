@@ -1,7 +1,7 @@
 import { RecipeData } from "../models"
 
 export default function RecipeBox(props: RecipeData) {
-    let { image, title, caption, slug } = props
+    let { Image, Title, Description, Slug } = props
 
     //take a slice of the string to show in HTML
     function reticence(str: string): string {
@@ -16,11 +16,11 @@ export default function RecipeBox(props: RecipeData) {
     }
 
     return (
-        <a href={slug} className="recipe-box">
-            <img src={image} alt={title} />
+        <a href={Slug} className="recipe-box">
+            <img src={Image} alt={Title} />
             <div className="recipe-box-info">
-                <h3>{title}</h3>
-                <p>{reticence(caption)}</p>
+                <h3>{Title}</h3>
+                <p>{reticence(Description)}</p>
                 <p>4.5</p>
             </div>
         </a>

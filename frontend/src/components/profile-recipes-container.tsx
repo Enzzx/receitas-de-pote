@@ -12,11 +12,11 @@ export default function ProfileRecipesContainer(props: Props) {
         <div id="profile-recipes-container">
             <input type="text" placeholder="Procure por uma receita"/>
             <div>
-                {boxes.map(box => {
+                {boxes != null ? boxes.map(box => {
                     return (
-                        <RecipeBox key={box.id} id={box.id} image={box.image} title={box.title} caption={box.caption} slug={box.slug}/>
+                        <RecipeBox key={box.Id} Id={box.Id} Image={box.Image} Title={box.Title} Description={box.Description} Slug={box.Slug}/>
                     )
-                })}
+                }) : <><h2>Você não possui nenuma receita</h2></> }
             </div>
         </div>
     )

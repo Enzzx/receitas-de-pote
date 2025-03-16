@@ -1,7 +1,7 @@
 import { News } from "../models"
 
 export default function NewsBox(props: News) {
-    let { title, image, topic, post_date, path } = props
+    let { Title, Image, Topic, Post_date, Path } = props
 
     function getTimeFromDate(date: string): string {
         const postDate: Date = new Date(date)
@@ -14,14 +14,14 @@ export default function NewsBox(props: News) {
     }
 
     return (
-        <a href={path} className="news-box">
-            <img src={image} alt="news thumb" />
+        <a href={Path} className="news-box">
+            <img src={Image} alt="news thumb" />
             <div className="news-box-info">
                 <aside>
-                    <p>{topic}</p>
-                    <p>{getTimeFromDate(post_date)}</p>
+                    <p>{Topic}</p>
+                    <p>{getTimeFromDate(Post_date)}</p>
                 </aside>
-                <h4>{title}</h4>
+                <h4>{Title}</h4>
             </div>
         </a>
     )
