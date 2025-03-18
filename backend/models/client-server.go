@@ -45,6 +45,20 @@ type HttpProfileBody struct {
 	}
 }
 
+type NewsData struct {
+	Title       string
+	Description string
+	Image       string
+	Publication string
+	Topic       string
+}
+
+type HttpNewsBody struct {
+	Message    string
+	Successfull bool
+	Data       []NewsData
+}
+
 type Claims struct {
 	Username string
 	jwt.RegisteredClaims
