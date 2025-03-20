@@ -6,7 +6,7 @@ export default function NewsContainer() {
         <div className="news-container">
             {news.map(noticia => {
                 return (
-                    <NewsBox key={noticia.Id} Id={noticia.Id} Title={noticia.Title} Caption={noticia.Caption} Image={noticia.Image} Topic={noticia.Topic} Post_date={noticia.Post_date} Path={noticia.Path} />
+                    <NewsBox key={noticia.Id} Id={noticia.Id} Title={noticia.Title} Description={noticia.Caption} Image={noticia.Image} Topic={noticia.Topic} Post_date={noticia.Post_date} />
                 )
             })}
         </div>

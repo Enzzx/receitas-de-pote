@@ -38,7 +38,7 @@ export default function Home() {
             const res = await req.text()
             setBackHi(res)
         } catch (e) {
-            console.log(e)
+            throw e
             setBackHi("sem hi :(")
         } finally {
             setLoading(false)

@@ -2,46 +2,41 @@
   {
       "Id": 1,
       "Title": "5 Receitas Rápidas e Fáceis para um Jantar Saudável e Saboroso",
-      "Caption": "Descubra como preparar refeições deliciosas, nutritivas e rápidas em menos de 30 minutos, perfeitas para um jantar saudável e saboroso após um dia corrido.",
+      "Description": "Descubra como preparar refeições deliciosas, nutritivas e rápidas em menos de 30 minutos, perfeitas para um jantar saudável e saboroso após um dia corrido.",
       "Image": "https://placehold.co/600x400",
       "Post_date": "2025-01-23T18:30:00",
-      "Topic": "receitas",
-      "Path": "#"
+      "Topic": "receitas"
   },
   {
       "Id": 2,
       "Title": "O Segredo dos Chefs: Como Fazer o Melhor Pão Caseiro com Dicas Simples",
-      "Caption": "Chefs renomados compartilham truques simples e eficazes para transformar seu pão caseiro em uma obra-prima culinária, com dicas que vão desde a escolha dos ingredientes até a técnica de amassar.",
+      "Description": "Chefs renomados compartilham truques simples e eficazes para transformar seu pão caseiro em uma obra-prima culinária, com dicas que vão desde a escolha dos ingredientes até a técnica de amassar.",
       "Image": "https://placehold.co/600x400",
       "Post_date": "2025-01-22T14:00:00",
-      "Topic": "bons hábitos",
-      "Path": "#"
+      "Topic": "bons hábitos"
   },
   {
       "Id": 3,
       "Title": "Famosos Revelam Suas Receitas Preferidas: Pratos que Encantam",
-      "Caption": "Veja os pratos favoritos de celebridades e aprenda a prepará-los em casa com receitas detalhadas e dicas exclusivas que vão impressionar seus convidados.",
+      "Description": "Veja os pratos favoritos de celebridades e aprenda a prepará-los em casa com receitas detalhadas e dicas exclusivas que vão impressionar seus convidados.",
       "Image": "https://placehold.co/600x400",
       "Post_date": "2025-01-21T10:45:00",
-      "Topic": "famosos",
-      "Path": "#"
+      "Topic": "famosos"
   },
   {
       "Id": 4,
       "Title": "Os Benefícios do Consumo de Ervas na Dieta Diária: Saúde e Bem-Estar",
-      "Caption": "Como adicionar ervas às suas receitas pode melhorar sua saúde e bem-estar, com dicas sobre as melhores ervas para diferentes pratos e seus benefícios nutricionais.",
+      "Description": "Como adicionar ervas às suas receitas pode melhorar sua saúde e bem-estar, com dicas sobre as melhores ervas para diferentes pratos e seus benefícios nutricionais.",
       "Image": "https://placehold.co/600x400",
       "Post_date": "2025-01-20T08:15:00",
-      "Topic": "saúde",
-      "Path": "#"
+      "Topic": "saúde"
   },
   {
       "Id": 5,
       "Title": "Receita de Brownie Sem Glúten Faz Sucesso na TV: Delícia Saudável",
-      "Caption": "A receita de um delicioso brownie sem glúten foi destaque em um programa de culinária famoso, conquistando o paladar de todos com seu sabor irresistível e textura perfeita.",
+      "Description": "A receita de um delicioso brownie sem glúten foi destaque em um programa de culinária famoso, conquistando o paladar de todos com seu sabor irresistível e textura perfeita.",
       "Image": "https://placehold.co/600x400",
       "Post_date": "2025-01-19T16:20:00",
-      "Topic": "programa de tv",
-      "Path": "#"
+      "Topic": "programa de tv"
   }
 ]

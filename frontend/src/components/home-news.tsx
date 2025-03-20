@@ -1,16 +1,37 @@
 import { useEffect, useState } from "react"
-import news from "../data-sim/home-news.json"
-import { News } from "../models"
+import { HttpNewsBody, News } from "../models"
+//import news from "../data-sim/home-news.json"
 
 export default function HomeNews() {
+
     const [mainNews, setMainNews] = useState<News | null>(null)
     const [otherNews, setOtherNews] = useState<News[]>([])
 
-    useEffect(() => {
-        if (news.length > 0) {
-            setMainNews(news[0])
-            setOtherNews(news.slice(1))
+    async function getLastNews() {
+        const head = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
         }
+
+        try {
+            const req = await fetch(import.meta.env.VITE_BACKEND_URL + "/news/last", head)
+            const res: HttpNewsBody = await req.json()
+
+            console.log(res.Data)
+            if (res.Successfull) {
+                if (res.Data.length > 0) {
+                    setMainNews(res.Data[0])
+                    setOtherNews(res.Data.slice(1))
+                }
+            }
+        } catch (e) {
+            throw e
+        }
+    }
+
+
+    useEffect(() => {
+        getLastNews()
     }, [])
 
     //count the post date to present date
@@ -31,17 +52,17 @@ export default function HomeNews() {
     return (
         <section id="home-news">
             <article className="main-news">
-                <a href={mainNews.Path}>
-                    <img src={mainNews.Image} alt="main's news thumb"/>
+                <a href="#">
+                    <img src={mainNews.Image != "" ? mainNews.Image : "https://placehold.co/600x400"} alt="main's news thumb"/>
                     <h2>{mainNews.Title}</h2>
-                    <p>{mainNews.Caption}</p>
+                    <p>{mainNews.Description}</p>
                 </a>
             </article>
             <section className="other-news">
                 <h3>Últimas notícias</h3>
                 {otherNews.map(noticia => (
-                    <a href={noticia.Path} key={noticia.Id}>
-                        <img src={noticia.Image} alt="news thumb" />
+                    <a href="#" key={noticia.Id}>
+                        <img src={mainNews.Image != "" ? mainNews.Image : "https://placehold.co/600x400"} alt="news thumb" />
                         <div className="home-news-box-info">
                             <h4>{noticia.Title}</h4>
                             <aside>
