@@ -48,7 +48,7 @@ func GetUserRecipes(username string) ([]models.RecipeData, error) {
 func GetLastNews() ([]models.NewsData, error) {
 	var news []models.NewsData
 
-	rows, err := config.DB.Query(context.Background(), "SELECT N.title, N.description, COALESCE(N.image, ''), N.publication, NT.name FROM news AS N INNER JOIN news_topic AS NT ON N.topic_id = NT.id ORDER BY N.publication DESC LIMIT 5;")
+	rows, err := config.DB.Query(context.Background(), "SELECT N.id, N.title, N.description, COALESCE(N.image, ''), N.publication, NT.name FROM news AS N INNER JOIN news_topic AS NT ON N.topic_id = NT.id ORDER BY N.publication DESC LIMIT 5;")
 	if err != nil {
 		return nil, err
 	}
@@ -56,9 +56,10 @@ func GetLastNews() ([]models.NewsData, error) {
 
 	for rows.Next() {
 		var new models.NewsData
-		err := rows.Scan(&new.Title, &new.Description, &new.Image, &new.Publication, &new.Topic)
+		err := rows.Scan(&new.Id, &new.Title, &new.Description, &new.Image, &new.Publication, &new.Topic)
 		if err != nil {
 			fmt.Println("erro ao escanear linha:", err)
+			continue
 		}
 		news = append(news, new)
 	}

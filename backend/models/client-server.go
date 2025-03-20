@@ -1,6 +1,8 @@
 package models
 
 import (
+	"time"
+
 	"github.com/golang-jwt/jwt/v5"
 )
 
@@ -46,10 +48,11 @@ type HttpProfileBody struct {
 }
 
 type NewsData struct {
+	Id			int
 	Title       string
 	Description string
 	Image       string
-	Publication string
+	Publication time.Time
 	Topic       string
 }
 
