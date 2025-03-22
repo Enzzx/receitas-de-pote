@@ -21,8 +21,10 @@ export default function ProfileSubPage() {
 
             console.log(res.Message)
             if (res.Succesfull) {
+                sessionStorage.setItem("userProfile", JSON.stringify(res.Data))
                 setProfileData(res.Data.Profile)
                 setRecipes(res.Data.Recipes)
+
             }
         } catch (e) {
             throw e
@@ -30,10 +32,21 @@ export default function ProfileSubPage() {
     }
 
     useEffect( () => {
-        const jwt = Cookies.get("jwt")
-        if (jwt != undefined) {
-            getUserData(jwt)
+        const userDataStr = sessionStorage.getItem("userProfile")
+
+        if (userDataStr != null) {
+            const userData: { Profile: UserProfile, Recipes: RecipeData[] } = JSON.parse(userDataStr)
+
+            setProfileData(userData.Profile)
+            setRecipes(userData.Recipes)
+
+        } else {
+            const jwt = Cookies.get("jwt")
+            if (jwt != undefined) {
+                getUserData(jwt)
+            }
         }
+
     }, [])
 
     return (

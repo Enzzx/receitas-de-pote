@@ -27,7 +27,6 @@ export default function LogIn() {
             console.log(res.Message)
             if (res.Succesfull) {
                 Cookies.set("jwt", res.Data, { expires: 7})
-                sessionStorage.clear()
                 navigate("/")
             } else {
                 setErrMessage(res.Message)

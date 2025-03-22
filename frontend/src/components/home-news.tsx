@@ -17,7 +17,6 @@ export default function HomeNews() {
             const req = await fetch(import.meta.env.VITE_BACKEND_URL + "/news/last", head)
             const res: HttpNewsBody = await req.json()
 
-            console.log(res.Data)
             if (res.Successfull) {
                 if (res.Data.length > 0) {
                     setMainNews(res.Data[0])
@@ -36,6 +35,7 @@ export default function HomeNews() {
 
     //count the post date to present date
     function getTimeFromDate(date: string): string {
+        //console.log(date)
         const postDate: Date = new Date(date)
         const now: Date = new Date()
         let diff: number = now.getTime() - postDate.getTime()
@@ -67,7 +67,7 @@ export default function HomeNews() {
                             <h4>{noticia.Title}</h4>
                             <aside>
                                 <p>{noticia.Topic}</p>
-                                <p>{getTimeFromDate(noticia.Post_date)}</p>
+                                <p>{getTimeFromDate(noticia.Publication)}</p>
                             </aside>
                         </div>
                     </a>

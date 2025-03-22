@@ -22,7 +22,7 @@ export type News = {
     Title: string
     Description: string
     Image: string
-    Post_date: string
+    Publication: string
     Topic: string
 }
 
