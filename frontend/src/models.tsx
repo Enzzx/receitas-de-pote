@@ -1,8 +1,3 @@
-export type Recipe = {
-    Title: string
-    Boxes: RecipeData[]
-}
-
 export type RecipeData = {
     Id: number
     Image: string
@@ -46,4 +41,10 @@ export type HttpProfileBody = {
         Profile: UserProfile
         Recipes: RecipeData[]
     }
+}
+
+export type HttpRecipesBody = {
+    Message: string
+    Successfull: boolean
+    Data: RecipeData[]
 }
