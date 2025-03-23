@@ -48,7 +48,7 @@ type HttpProfileBody struct {
 }
 
 type NewsData struct {
-	Id			int
+	Id          int
 	Title       string
 	Description string
 	Image       string
@@ -57,9 +57,15 @@ type NewsData struct {
 }
 
 type HttpNewsBody struct {
-	Message    string
+	Message     string
 	Successfull bool
-	Data       []NewsData
+	Data        []NewsData
+}
+
+type HttpRecipesBody struct {
+	Message     string
+	Successfull bool
+	Data        []RecipeData
 }
 
 type Claims struct {

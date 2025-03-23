@@ -66,3 +66,25 @@ func GetLastNews() ([]models.NewsData, error) {
 
 	return news, err
 }
+
+func GetTopicRecipes(topic string) ([]models.RecipeData, error) {
+	var recipes []models.RecipeData
+
+	rows, err := config.DB.Query(context.Background(), "")
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		var recipe models.RecipeData
+		err := rows.Scan(&recipe.Id, &recipe.Title, &recipe.Image , &recipe.Description, &recipe.Slug)
+		if err != nil {
+			fmt.Println("erro ao escanear linha:", err)
+			continue
+		}
+		recipes = append(recipes, recipe)
+	}
+
+	return recipes, err
+}

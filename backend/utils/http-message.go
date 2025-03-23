@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 )
 
-func HttpBody(succesfull bool, message string, data string) (string, error) {
+func HttpBody(successfull bool, message string, data string) (string, error) {
 	var HttpBody models.HttpAccBody
-	HttpBody.Succesfull = succesfull
+	HttpBody.Succesfull = successfull
 	HttpBody.Message = message
 	HttpBody.Data = data
 
@@ -38,6 +38,19 @@ func HttpNBody(successfull bool, message string, news []models.NewsData) (string
 
 	if news != nil {
 		httpBody.Data = news
+	}
+
+	parsedHttp, err := json.Marshal(httpBody)
+	return string(parsedHttp), err
+}
+
+func HttpRBody(successfull bool, message string, recipes []models.RecipeData) (string, error) {
+	var httpBody models.HttpRecipesBody
+	httpBody.Successfull = successfull
+	httpBody.Message = message
+
+	if recipes != nil {
+		httpBody.Data = recipes
 	}
 
 	parsedHttp, err := json.Marshal(httpBody)
