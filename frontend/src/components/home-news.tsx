@@ -62,7 +62,7 @@ export default function HomeNews() {
                 <h3>Últimas notícias</h3>
                 {otherNews.map(noticia => (
                     <a href="#" key={noticia.Id}>
-                        <img src={mainNews.Image != "" ? mainNews.Image : "https://placehold.co/600x400"} alt="news thumb" />
+                        <img src={noticia.Image != "" ? noticia.Image : "https://placehold.co/600x400"} alt="news thumb" />
                         <div className="home-news-box-info">
                             <h4>{noticia.Title}</h4>
                             <aside>

@@ -70,7 +70,7 @@ func GetLastNews() ([]models.NewsData, error) {
 func GetTopicRecipes(topic string) ([]models.RecipeData, error) {
 	var recipes []models.RecipeData
 
-	rows, err := config.DB.Query(context.Background(), "")
+	rows, err := config.DB.Query(context.Background(), "SELECT R.id, R.title, COALESCE(R.image, ''), R.description, R.slug FROM recipes AS R INNER JOIN recipes_topic AS RT ON R.topic_id = RT.id WHERE RT.name = $1 ORDER BY R.publication DESC LIMIT 6;", topic)
 	if err != nil {
 		return nil, err
 	}

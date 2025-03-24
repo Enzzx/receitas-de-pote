@@ -188,6 +188,7 @@ nav ul li:hover {
 }
 .main-news img {
     width: 100%;
+    aspect-ratio: 5/3;
     height: auto;
 }
 .main-news h2 {
@@ -280,6 +281,7 @@ nav ul li:hover {
 }
 .recipe-box > img {
     width: 100%;
+    aspect-ratio: 5/3;
     height: auto;
     transition: 0.2s ease-in-out;
 }
