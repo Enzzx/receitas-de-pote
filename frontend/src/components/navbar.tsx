@@ -4,9 +4,7 @@ import { Link } from "react-router-dom"
 export default function Navbar({ username }: { username: string | null }) {
     const [isShrunk, setIsShrunk] = useState<boolean>(false)
     const mobile: boolean = window.innerWidth < 650
-    //const username = sessionStorage.getItem("username")
 
-    //shrink and unshrink the navbar
     useEffect(() => {
         const home: any = document.querySelector("main")
 
@@ -33,7 +31,7 @@ export default function Navbar({ username }: { username: string | null }) {
     return (
         <nav className={isShrunk || mobile ? "shrink" : ""}>
             <section>
-                <img src="./icons/menu.png" alt="menu" className={!mobile ? "hide" : ""}/>
+                <img src="./icons/menu.png" alt="menu" className="hide"/>
                 <form className="search-bar">
                     <input type="search" placeholder="pesquise uma receita"/>
                     <button type="submit" className={mobile ? "hide" : ""}><img src="./icons/search.png" alt="search" /></button>

@@ -13,7 +13,7 @@ export default function FooterPage() {
                     <li>sobremesas</li>
                 </ul>
             </div>
-            <p>criado by <i><strong>Enzzx</strong></i></p>
+            <p>criado by <i><strong><a href="https://github.com/Enzzx">Enzzx</a></strong></i></p>
         </section>  
     )
 }
