@@ -67,7 +67,7 @@ export default function Home() {
                 <section></section>
                 <article>
                     <h2>{loading ? "Tá vindo..." : backHi}</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo dicta nulla non quae labore repellat facilis nesciunt quod doloribus, totam sit.</p>
+                    <p>A cozinha está em em funcionamento</p>
                 </article>
             </div>
             <RecipesContainer title="Massas"/>

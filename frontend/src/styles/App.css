@@ -188,8 +188,8 @@ nav ul li:hover {
 }
 .main-news img {
     width: 100%;
-    aspect-ratio: 5/3;
-    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
 }
 .main-news h2 {
     margin: 10px 0;
@@ -281,8 +281,8 @@ nav ul li:hover {
 }
 .recipe-box > img {
     width: 100%;
-    aspect-ratio: 5/3;
-    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
     transition: 0.2s ease-in-out;
 }
 .recipe-box-info {
@@ -301,7 +301,7 @@ nav ul li:hover {
     margin: 50px 0;
 }
 .img-background section {
-    background-image: url("https://placehold.co/600x400");
+    background-image: url("servidor.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -326,7 +326,7 @@ nav ul li:hover {
     display: flex;
     justify-content: space-between;
     gap: 40px;
-    margin: 30px;
+    margin: 50px 30px;
     padding: 20px 30px;
     border: solid 1px black;
 }
@@ -443,6 +443,8 @@ nav ul li:hover {
 }
 .news-box img {
     width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
 }
 .news-box-info {
     padding: 20px 15px;
@@ -473,12 +475,17 @@ nav ul li:hover {
     display: flex;
     height: 100%;
 }
-#login-page .login-background, #signin-page .signin-background {
+.login-background, .signin-background {
     flex: 50%;
-    background-image: url("https://placehold.co/600x400");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.login-background {
+    background-image: url("login.jpeg");
+}
+.signin-background {
+    background-image: url("cadastro.jpg");
 }
 #login-page > div, #signin-page > div {
     flex: 50%;
@@ -756,5 +763,6 @@ nav ul li:hover {
     }
     #login-form, #signin-form {
         gap: 30px;
+        font-size: 1.3rem;
     }
 }

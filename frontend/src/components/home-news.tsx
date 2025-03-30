@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { HttpNewsBody, News } from "../models"
+import { Link } from "react-router-dom"
 //import news from "../data-sim/home-news.json"
 
 export default function HomeNews() {
@@ -9,7 +10,7 @@ export default function HomeNews() {
 
     async function getLastNews() {
         const head = {
-            method: 'POST',
+            method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         }
 
@@ -72,7 +73,7 @@ export default function HomeNews() {
                         </div>
                     </a>
                 ))}
-                <button>Mais notícias</button>
+                <Link to="/news"><button>Mais notícias</button></Link>
             </section>
         </section>
     )
