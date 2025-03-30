@@ -16,5 +16,6 @@ func registerRoutes(mux *http.ServeMux) {
 	mux.Handle("/user/profile",middleware.Auth(http.HandlerFunc(handlers.UserProfile)))
 	mux.HandleFunc("/user/delete", handlers.DeleteAccount)
 	mux.HandleFunc("/news/last", handlers.MainNews)
+	mux.HandleFunc("/news/page", handlers.News)
 	mux.HandleFunc("/recipes", handlers.GetRecipesByTopic)
 }
