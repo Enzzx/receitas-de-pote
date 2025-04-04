@@ -210,7 +210,7 @@ nav ul li:hover {
     padding: 20px 0;
     border-bottom: solid 1px grey;
 }
-.other-news a:nth-last-child(2) {
+.other-news a:nth-last-child(1) {
     border-bottom: none;
 }
 .other-news a img {
@@ -301,7 +301,7 @@ nav ul li:hover {
     margin: 50px 0;
 }
 .img-background section {
-    background-image: url("servidor.jpg");
+    background-image: url("/servidor.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -482,10 +482,10 @@ nav ul li:hover {
     background-size: cover;
 }
 .login-background {
-    background-image: url("login.jpeg");
+    background-image: url("/login.jpeg");
 }
 .signin-background {
-    background-image: url("cadastro.jpg");
+    background-image: url("/cadastro.jpg");
 }
 #login-page > div, #signin-page > div {
     flex: 50%;

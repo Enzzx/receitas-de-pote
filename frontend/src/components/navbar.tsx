@@ -32,11 +32,11 @@ export default function Navbar({ username }: { username: string | null }) {
         <nav className={isShrunk || mobile ? "shrink" : ""}>
             <section>
                 <img src="./icons/menu.png" alt="menu" className="hide"/>
-                <form className="search-bar">
+                <form action="/search" method="get" className="search-bar">
                     <input type="search" placeholder="pesquise uma receita"/>
                     <button type="submit" className={mobile ? "hide" : ""}><img src="./icons/search.png" alt="search" /></button>
                 </form>
-                <Link to={username != null ? 'account' : 'login'} className="pfp">
+                <Link to={username != null ? '/account' : '/login'} className="pfp">
                     <img src="./icons/account.png" alt="pfp" />
                     <p className={mobile ? "hide" : ""}>{username != null ? username : 'Conecte-se'}</p>
                 </Link>

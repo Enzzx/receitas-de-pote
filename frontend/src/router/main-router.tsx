@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 // PAGES
 import App from "../App.tsx"
 import List from "../pages/list.tsx"
@@ -8,6 +8,7 @@ import Account from "../pages/account.tsx";
 import About from "../pages/about.tsx"
 import LogIn from "../pages/log-in.tsx";
 import SignIn from "../pages/sign-in.tsx";
+import Search from "../pages/search.tsx";
 //SUBPAGES
 import ProfileSubPage from "../pages/subpages/profile-subpage.tsx";
 import FavoritesSubPage from "../pages/subpages/favorites-subpage.tsx";
@@ -22,7 +23,7 @@ export const MainRouter = createBrowserRouter([
             { path: "/news", element: <News /> },
             { path: "/", element: <Home /> },
             {
-                path: "account",
+                path: "/account",
                 element: <Account />,
                 children: [
                     { path: "", element: <ProfileSubPage />},
@@ -31,7 +32,9 @@ export const MainRouter = createBrowserRouter([
             },
             { path: "/about", element: <About /> },
             { path: "/login", element: <LogIn /> },
-            { path: "/signin", element: <SignIn /> }
+            { path: "/signin", element: <SignIn /> },
+            { path: "/search", element: <Search /> },
+            { path: "*", element: <Navigate to="/" replace /> }
         ]
     }
 ])

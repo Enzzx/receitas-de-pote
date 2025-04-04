@@ -39,7 +39,7 @@ export default function Home() {
             setBackHi(res)
         } catch (e) {
             throw e
-            setBackHi("sem hi :(")
+            setBackHi("A cozinha está fechada")
         } finally {
             setLoading(false)
         }
@@ -67,7 +67,6 @@ export default function Home() {
                 <section></section>
                 <article>
                     <h2>{loading ? "Tá vindo..." : backHi}</h2>
-                    <p>A cozinha está em em funcionamento</p>
                 </article>
             </div>
             <RecipesContainer title="Massas"/>
