@@ -38,14 +38,16 @@ export default function Home() {
             const res = await req.text()
             setBackHi(res)
         } catch (e) {
-            throw e
             setBackHi("A cozinha está fechada")
+            throw e
         } finally {
             setLoading(false)
         }
     }
 
     useEffect(() => {
+        document.querySelector('main')?.scrollTo({ top: 0, behavior: 'smooth' })
+
         const username = sessionStorage.getItem("username")
         const jwt = Cookies.get("jwt")
         if (username == null && jwt != undefined) {
