@@ -7,7 +7,7 @@ import (
 
 func HttpBody(successfull bool, message string, data string) (string, error) {
 	var HttpBody models.HttpAccBody
-	HttpBody.Succesfull = successfull
+	HttpBody.Successfull = successfull
 	HttpBody.Message = message
 	HttpBody.Data = data
 
@@ -17,7 +17,7 @@ func HttpBody(successfull bool, message string, data string) (string, error) {
 
 func HttpPBody(successfull bool, message string, user *models.UserProfile, recipes *[]models.RecipeData) (string, error) {
 	var httpBody models.HttpProfileBody
-	httpBody.Succesfull = successfull
+	httpBody.Successfull = successfull
 	httpBody.Message = message
 
 	if user != nil {
@@ -51,6 +51,22 @@ func HttpRBody(successfull bool, message string, recipes []models.RecipeData) (s
 
 	if recipes != nil {
 		httpBody.Data = recipes
+	}
+
+	parsedHttp, err := json.Marshal(httpBody)
+	return string(parsedHttp), err
+}
+
+func HttpSBody(successfull bool, message string, news *[]models.NewsData, recipes *[]models.RecipeData) (string, error) {
+	var httpBody models.HttpSearchBody
+	httpBody.Successfull = successfull
+	httpBody.Message = message
+
+	if news != nil {
+		httpBody.Data.News = *news
+	}
+	if recipes != nil {
+		httpBody.Data.Recipes = *recipes
 	}
 
 	parsedHttp, err := json.Marshal(httpBody)

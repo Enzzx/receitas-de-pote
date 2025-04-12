@@ -20,7 +20,7 @@ type User struct {
 
 type HttpAccBody struct {
 	Message    string
-	Succesfull bool
+	Successfull bool
 	Data       string
 }
 
@@ -40,7 +40,7 @@ type RecipeData struct {
 
 type HttpProfileBody struct {
 	Message    string
-	Succesfull bool
+	Successfull bool
 	Data       struct {
 		Profile UserProfile
 		Recipes []RecipeData
@@ -66,6 +66,15 @@ type HttpRecipesBody struct {
 	Message     string
 	Successfull bool
 	Data        []RecipeData
+}
+
+type HttpSearchBody struct {
+	Message     string
+	Successfull bool
+	Data        struct {
+		Recipes []RecipeData
+		News    []NewsData
+	}
 }
 
 type Claims struct {

@@ -109,3 +109,46 @@ func GetTopicRecipes(topic string) ([]models.RecipeData, error) {
 
 	return recipes, err
 }
+
+func GetRecipesByTitle(title string) ([]models.RecipeData, error) {
+	var recipes []models.RecipeData
+
+	rows, err := config.DB.Query(context.Background(), "SELECT id, title, COALESCE(image, ''), description, slug FROM recipes WHERE title LIKE '%$1%' ORDER BY R.publication DESC;", title)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		var recipe models.RecipeData
+		err := rows.Scan(&recipe.Id, &recipe.Title, &recipe.Image , &recipe.Description, &recipe.Slug)
+		if err != nil {
+			fmt.Println("erro ao escanear linha:", err)
+			continue
+		}
+		recipes = append(recipes, recipe)
+	}
+
+	return recipes, err
+}
+
+func GetNewsByTitle(title string) ([]models.NewsData, error) {
+	var news []models.NewsData
+
+	rows, err := config.DB.Query(context.Background(), "SELECT N.id, N.title, N.description, COALESCE(N.image, ''), N.publication, NT.name FROM news AS N INNER JOIN news_topic AS NT ON N.topic_id = NT.id WHERE N.title LIKE '%$1%';", title)
+	if err != nil {
+		return nil, err
+	}
+
+	for rows.Next() {
+		var new models.NewsData
+		err := rows.Scan(&new.Id, &new.Title, &new.Description, &new.Image, &new.Publication, &new.Topic)
+		if err != nil {
+			fmt.Println("erro ao escanear linha:", err)
+			continue
+		}
+		news = append(news, new)
+	}
+
+	return news, err
+}
