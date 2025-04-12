@@ -30,13 +30,13 @@ export type HttpNewsBody = {
 
 export type HttpAccBody = {
     Message: string
-    Succesfull: boolean
+    Successfull: boolean
     Data: string
 }
 
 export type HttpProfileBody = {
     Message: string
-    Succesfull: boolean
+    Successfull: boolean
     Data: {
         Profile: UserProfile
         Recipes: RecipeData[]
@@ -47,4 +47,10 @@ export type HttpRecipesBody = {
     Message: string
     Successfull: boolean
     Data: RecipeData[]
+}
+
+export type HttpSearchBody = {
+    Message: string
+    Successfull: boolean
+    Data: { recipes: RecipeData[], news: News[] }
 }

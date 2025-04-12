@@ -33,7 +33,7 @@ export default function Navbar({ username }: { username: string | null }) {
             <section>
                 <img src="./icons/menu.png" alt="menu" className="hide"/>
                 <form action="/search" method="get" className="search-bar">
-                    <input name="search" type="search" placeholder="pesquise uma receita"/>
+                    <input name="query" type="search" placeholder="pesquise uma receita"/>
                     <button type="submit" className={mobile ? "hide" : ""}><img src="./icons/search.png" alt="search" /></button>
                 </form>
                 <Link to={username != null ? '/account' : '/login'} className="pfp">

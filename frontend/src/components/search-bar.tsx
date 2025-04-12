@@ -4,7 +4,7 @@ export default function SearchBar() {
             <section className="search-bar-section">
                 <h3>O que quer cozinhar agora?</h3>
                 <form action="/search" method="get"className="search-bar-container-search">
-                    <input name="search" type="search"  placeholder="Pesquise uma receita ou ingrediente"/>
+                    <input name="query" type="search"  placeholder="Pesquise uma receita ou ingrediente"/>
                     <button type="submit"><img src="./icons/search.png" alt="search" /></button>
                 </form>
             </section>

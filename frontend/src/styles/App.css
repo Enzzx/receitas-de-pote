@@ -538,30 +538,41 @@ nav ul li:hover {
     transform: translate(-50%, -50%);
     text-align: center;
     width: 40vw;
-    min-width: 150px;
+    min-width: 180px;
     max-width: 350px;
-    padding: 40px 15px;
-    border: dashed 5px #ef7e3d;
-    border-radius: 5px;
+    padding: 40px 25px;
+    background-color: #fff4ea;
+    border: dashed 3px #ef7e3d;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #ef7e3d14;
 }
 .to-login-message p {
-    color: #e88e59;
-    font-weight: bold;
-    margin-bottom: 25px;
+    color: #ef7e3d;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 28px;
+    line-height: 1.5;
 }
 .to-login-message button {
     background: transparent;
-    color: black;
+    color: #333;
     width: 80%;
-    padding: 5px 0;
-    margin: 5px 0;
-    border: solid 1px #ef7e3d;
-    border-radius: 2px;
-    transition: 0.1s;
+    padding: 8px 0;
+    margin: 6px 0;
+    border: solid 1.5px #ef7e3d;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
 }
 .to-login-message button:hover {
     background: #ef7e3d;
     color: white;
+    transform: translateY(-1px);
+}
+.to-login-message a {
+    display: block;
+    text-decoration: none;
 }
 
 /* - - - - - - profile-subpage.tsx - - - - - - */
@@ -654,7 +665,7 @@ nav ul li:hover {
 }
 
 
-/* - - - - - - profile-subpage.tsx - - - - - - */
+/* - - - - - - search.tsx - - - - - - */
 .search-result {
     padding: 50px;
 }
@@ -666,7 +677,7 @@ nav ul li:hover {
 }
 .search-result input {
     width: 300px;
-    padding: 2px 4px;
+    padding: 2px 12px;
 }
 .search-result input:focus ~ button {
     display: flex;
@@ -674,6 +685,96 @@ nav ul li:hover {
 .search-result button {
     display: none;
 }
+
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  .toggle-buttons {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+  }
+  .toggle-btn {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+  }
+  .toggle-btn:hover {
+    color: #333;
+  }
+  .toggle-btn.active {
+    color: #0066cc;
+    border-bottom: 2px solid #0066cc;
+  }
+  
+  .list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .list-item {
+    display: flex;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: white;
+  }
+  .item-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+  .item-content {
+    padding: 15px;
+    flex: 1;
+  }
+  .item-title {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #333;
+  }
+  .item-description {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .news-item .item-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 10px;
+  }
+  .topic-tag {
+    background-color: #e6f0ff;
+    color: #0066cc;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .publication-name {
+    color: #888;
+    font-size: 12px;
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px dashed #ddd;
+  }
+  
 
 
 /* - - - - - - responsive layout - - - - - - */
@@ -761,9 +862,9 @@ nav ul li:hover {
     }
 
     #profile {
-         flex-direction: column;
-         gap: 50px;
-         margin: 20px 50px;
+        flex-direction: column;
+        gap: 50px;
+        margin: 20px 50px;
     }
     #profile-recipes-container input {
         width: 100%;
@@ -785,5 +886,23 @@ nav ul li:hover {
     #login-form, #signin-form {
         gap: 30px;
         font-size: 1.3rem;
+    }
+
+    .to-login-message {
+        width: 85vw;
+        padding: 35px 20px;
+    }
+    
+    .to-login-message button {
+        width: 90%;
+    }
+
+    .list-item {
+        flex-direction: column;
+    }
+      
+    .item-image {
+        width: 100%;
+        height: 180px;
     }
 }

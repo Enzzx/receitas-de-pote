@@ -25,7 +25,7 @@ export default function LogIn() {
             const res: HttpAccBody = await req.json()
 
             console.log(res.Message)
-            if (res.Succesfull) {
+            if (res.Successfull) {
                 Cookies.set("jwt", res.Data, { expires: 7})
                 navigate("/")
             } else {

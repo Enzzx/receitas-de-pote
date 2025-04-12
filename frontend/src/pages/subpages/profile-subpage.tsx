@@ -20,7 +20,7 @@ export default function ProfileSubPage() {
             const res: HttpProfileBody = await req.json()
 
             console.log(res.Message)
-            if (res.Succesfull) {
+            if (res.Successfull) {
                 sessionStorage.setItem("userProfile", JSON.stringify(res.Data))
                 setProfileData(res.Data.Profile)
                 setRecipes(res.Data.Recipes)

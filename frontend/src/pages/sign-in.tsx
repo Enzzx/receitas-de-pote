@@ -24,7 +24,7 @@ export default function SignIn() {
                 const req = await fetch(import.meta.env.VITE_BACKEND_URL + "/signin", head)
                 const res: HttpAccBody = await req.json()
 
-                if (res.Succesfull) {
+                if (res.Successfull) {
                     alert("Conta criada com êxito")
                     navigate("/login")
                 } else {

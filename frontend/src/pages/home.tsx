@@ -24,7 +24,7 @@ export default function Home() {
             const res: HttpAccBody = await req.json()
 
             console.log(res.Message)
-            if (res.Succesfull) {
+            if (res.Successfull) {
                 sessionStorage.setItem("username", res.Data)
             }
         } catch (e) {
