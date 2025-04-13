@@ -112,8 +112,9 @@ func GetTopicRecipes(topic string) ([]models.RecipeData, error) {
 
 func GetRecipesByTitle(title string) ([]models.RecipeData, error) {
 	var recipes []models.RecipeData
+	title = "%" + title + "%"
 
-	rows, err := config.DB.Query(context.Background(), "SELECT id, title, COALESCE(image, ''), description, slug FROM recipes WHERE title LIKE '%$1%' ORDER BY R.publication DESC;", title)
+	rows, err := config.DB.Query(context.Background(), "SELECT id, title, COALESCE(image, ''), description, slug FROM recipes WHERE title ILIKE $1 ORDER BY publication DESC;", title)
 	if err != nil {
 		return nil, err
 	}
@@ -134,8 +135,9 @@ func GetRecipesByTitle(title string) ([]models.RecipeData, error) {
 
 func GetNewsByTitle(title string) ([]models.NewsData, error) {
 	var news []models.NewsData
+	title = "%" + title + "%"
 
-	rows, err := config.DB.Query(context.Background(), "SELECT N.id, N.title, N.description, COALESCE(N.image, ''), N.publication, NT.name FROM news AS N INNER JOIN news_topic AS NT ON N.topic_id = NT.id WHERE N.title LIKE '%$1%';", title)
+	rows, err := config.DB.Query(context.Background(), "SELECT N.id, N.title, N.description, COALESCE(N.image, ''), N.publication, NT.name FROM news AS N INNER JOIN news_topic AS NT ON N.topic_id = NT.id WHERE N.title ILIKE $1;", title)
 	if err != nil {
 		return nil, err
 	}
