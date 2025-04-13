@@ -23,7 +23,7 @@ export default function ProfileInfo(props: UserProfile) {
             const req = await fetch(import.meta.env.VITE_BACKEND_URL + "/user/delete", head)
             const res: HttpAccBody = await req.json()
 
-            if (res.Succesfull) {
+            if (res.Successfull) {
                 alert(res.Message)
                 clearLogin()
             }

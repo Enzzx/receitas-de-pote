@@ -3,7 +3,6 @@ import { RecipeData } from "../models"
 export default function RecipeBox(props: RecipeData) {
     let { Image, Title, Description, Slug } = props
 
-    //take a slice of the string to show in HTML
     function reticence(str: string): string {
         if (str.length <= 80) return str
 

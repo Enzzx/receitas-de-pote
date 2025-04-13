@@ -18,8 +18,8 @@ export default function NewsBox(props: News) {
             <img src={Image} alt="news thumb" />
             <div className="news-box-info">
                 <aside>
-                    <p>{Topic}</p>
-                    <p>{getTimeFromDate(Publication)}</p>
+                    <p className="topic-tag">{Topic}</p>
+                    <p className="topic-tag">{getTimeFromDate(Publication)}</p>
                 </aside>
                 <h4>{Title}</h4>
             </div>

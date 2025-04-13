@@ -1,61 +1,63 @@
 import { useState } from 'react';
 import { News, RecipeData } from '../models';
 
-export default function SearchResultContainer(props: {  recipes: RecipeData[], news: News[]}) {
-    const { recipes, news } = props
+export default function SearchResultContainer(props: { recipes: RecipeData[], news: News[] }) {
+  const { recipes = [], news = [] } = props
   const [activeTab, setActiveTab] = useState<'recipes' | 'news'>('recipes');
 
+  function reticence(str: string): string {
+    if (str.length <= 140) return str
+
+    str = str.slice(0, 140)
+    while(/[^a-zA-Z0-9]$/.test(str)) {
+        str = str.slice(0, -1)
+    }
+
+    return str + "..."
+}
 
   return (
     <div className="content-container">
-      {/* Toggle Buttons */}
       <div className="toggle-buttons">
         <button
           className={`toggle-btn ${activeTab === 'recipes' ? 'active' : ''}`}
-          onClick={() => setActiveTab('recipes')}
-        >
-          Recipes
-        </button>
+          onClick={() => setActiveTab('recipes')}>Recipes</button>
         <button
           className={`toggle-btn ${activeTab === 'news' ? 'active' : ''}`}
-          onClick={() => setActiveTab('news')}
-        >
-          News
-        </button>
+          onClick={() => setActiveTab('news')}>News</button>
       </div>
 
-      {/* Content Area */}
       <div className="content-area">
         {activeTab === 'recipes' && (
           <div className="list-container">
-            {recipes.length > 0 ? (
+            {recipes != null && recipes.length > 0 ? (
               recipes.map((recipe) => (
-                <div key={recipe.Id} className="list-item recipe-item">
-                  <img 
-                    src={recipe.Image || "/api/placeholder/150/150"} 
-                    alt={recipe.Title} 
+                <a href={'recipes/pages/'+recipe.Slug} key={recipe.Id} className="list-item recipe-item">
+                  <img
+                    src={recipe.Image}
+                    alt={recipe.Title}
                     className="item-image"
                   />
                   <div className="item-content">
                     <h3 className="item-title">{recipe.Title}</h3>
-                    <p className="item-description">{recipe.Description}</p>
+                    <p className="item-description">{reticence(recipe.Description)}</p>
                   </div>
-                </div>
+                </a>
               ))
             ) : (
-              <div className="empty-state">No recipes available</div>
+              <div className="empty-state">Não há receitas correspondentes</div>
             )}
           </div>
         )}
 
         {activeTab === 'news' && (
           <div className="list-container">
-            {news.length > 0 ? (
+            {news != null && news.length > 0 ? (
               news.map((item) => (
                 <div key={item.Id} className="list-item news-item">
-                  <img 
-                    src={item.Image || "/api/placeholder/150/150"} 
-                    alt={item.Title} 
+                  <img
+                    src={item.Image}
+                    alt={item.Title}
                     className="item-image"
                   />
                   <div className="item-content">
@@ -69,7 +71,7 @@ export default function SearchResultContainer(props: {  recipes: RecipeData[], n
                 </div>
               ))
             ) : (
-              <div className="empty-state">No news articles available</div>
+              <div className="empty-state">Não há notícias correspondentes</div>
             )}
           </div>
         )}

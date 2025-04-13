@@ -67,8 +67,8 @@ export default function HomeNews() {
                         <div className="home-news-box-info">
                             <h4>{noticia.Title}</h4>
                             <aside>
-                                <p>{noticia.Topic}</p>
-                                <p>{getTimeFromDate(noticia.Publication)}</p>
+                                <p className="topic-tag">{noticia.Topic}</p>
+                                <p className="topic-tag">{getTimeFromDate(noticia.Publication)}</p>
                             </aside>
                         </div>
                     </a>

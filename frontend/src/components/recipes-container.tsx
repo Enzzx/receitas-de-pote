@@ -11,7 +11,7 @@ export default function RecipesContainer(props: { title: string }) {
             const req = await fetch(import.meta.env.VITE_BACKEND_URL + "/recipes?topic=" + title.toLowerCase())
             const res: HttpRecipesBody = await req.json()
 
-            console.log(res)
+            console.log(res.Message)
             if (res.Successfull) {
                 setBoxes(res.Data)
             }

@@ -179,17 +179,18 @@ nav ul li:hover {
 .main-news {
     flex: 55%;
 }
-.main-news a, .other-news a, .recipe-box, .news-box, .search-bar-options div a, #account-nav a, .pfp, .footer a {
+.main-news a, .other-news a, .recipe-box, .news-box, .search-bar-options div a, #account-nav a, .pfp, .recipe-item, .footer a {
     color: inherit;
     text-decoration: none;
 }
-.main-news a:hover h2, .other-news a:hover h4, .news-box:hover h4, .footer-content ul li:hover, .footer a {
+.main-news a:hover h2, .other-news a:hover h4, .news-box:hover h4, .footer-content ul li:hover, .recipe-item:hover .item-title, .footer a {
     text-decoration: underline 2px #e88e59;
 }
 .main-news img {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
+    border-radius: 6px;
 }
 .main-news h2 {
     margin: 10px 0;
@@ -206,12 +207,9 @@ nav ul li:hover {
 .other-news a {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    padding: 20px 0;
-    border-bottom: solid 1px grey;
-}
-.other-news a:nth-last-child(1) {
-    border-bottom: none;
+    margin: 15px 0;
+    border-radius: 6px;
+    overflow: hidden;
 }
 .other-news a img {
     flex: 30%;
@@ -223,7 +221,9 @@ nav ul li:hover {
     flex-direction: column;
     justify-content: space-between;
     height: auto;
-    padding: 10px 0;
+    padding: 10px;
+    border: solid 1px lightgrey;
+    border-left: none;
 }
 .home-news-box-info aside, .news-box-info aside {
     display: flex;
@@ -286,7 +286,7 @@ nav ul li:hover {
     transition: 0.2s ease-in-out;
 }
 .recipe-box-info {
-    padding: 15px;
+    padding: 20px;
 }
 .recipe-box-info h3 {
     color: #e88e59;
@@ -439,7 +439,9 @@ nav ul li:hover {
     display: flex;
     flex-direction: column;
     min-width: 200px;
+    border-radius: 6px;
     box-shadow: 0px 0px 2px #00000055;
+    overflow: hidden;
 }
 .news-box img {
     width: 100%;
@@ -687,17 +689,16 @@ nav ul li:hover {
 }
 
 .content-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 80vw;
+    padding: 0 50px;
     font-family: Arial, sans-serif;
-  }
-  .toggle-buttons {
+}
+.toggle-buttons {
     display: flex;
     border-bottom: 1px solid #e0e0e0;
     margin-bottom: 20px;
-  }
-  .toggle-btn {
+}
+.toggle-btn {
     padding: 10px 20px;
     background: none;
     border: none;
@@ -705,75 +706,75 @@ nav ul li:hover {
     font-weight: 500;
     color: #666;
     cursor: pointer;
-  }
-  .toggle-btn:hover {
+}
+.toggle-btn:hover {
     color: #333;
-  }
-  .toggle-btn.active {
-    color: #0066cc;
-    border-bottom: 2px solid #0066cc;
-  }
-  
-  .list-container {
+}
+.toggle-btn.active {
+    color: #569940;
+    border-bottom: 2px solid #569940;
+}
+
+.list-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-  .list-item {
+}
+.list-item {
     display: flex;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px #0000000d;
     background-color: white;
-  }
-  .item-image {
-    width: 120px;
-    height: 120px;
+}
+.item-image {
+    width: 150px;
+    aspect-ratio: 5 / 4;
     object-fit: cover;
-  }
-  .item-content {
+}
+.item-content {
     padding: 15px;
     flex: 1;
-  }
-  .item-title {
+}
+.item-title {
     margin: 0 0 10px 0;
     font-size: 18px;
     color: #333;
-  }
-  .item-description {
+}
+.item-description {
     margin: 0;
     color: #666;
     font-size: 14px;
     line-height: 1.4;
-  }
-  .news-item .item-meta {
+}
+.news-item .item-meta {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
     gap: 10px;
-  }
-  .topic-tag {
-    background-color: #e6f0ff;
-    color: #0066cc;
+}
+.topic-tag {
+    background-color: #e6ffe6;
+    color: #569940;
     padding: 3px 8px;
     border-radius: 4px;
     font-size: 12px;
     font-weight: 500;
-  }
-  .publication-name {
+}
+.publication-name {
     color: #888;
     font-size: 12px;
-  }
-  
-  .empty-state {
+}
+
+.empty-state {
     text-align: center;
     padding: 30px;
     color: #888;
     background-color: #f9f9f9;
     border-radius: 8px;
     border: 1px dashed #ddd;
-  }
+}
   
 
 
@@ -811,6 +812,10 @@ nav ul li:hover {
 
     #news-main {
         margin: 100px 50px;
+    }
+
+    .content-container {
+        max-width: none;
     }
 }
 

@@ -52,5 +52,5 @@ export type HttpRecipesBody = {
 export type HttpSearchBody = {
     Message: string
     Successfull: boolean
-    Data: { recipes: RecipeData[], news: News[] }
+    Data: { Recipes: RecipeData[], News: News[] }
 }
