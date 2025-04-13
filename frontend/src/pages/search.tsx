@@ -50,7 +50,7 @@ export default function Search() {
                     <section className="search-result">
                         <h2>Resultado para a pesquisa</h2>
                         <form action="/search" method="get" className="search-bar-container-search">
-                            <input name="search" type="search" ref={inputRef} />
+                            <input name="query" type="search" ref={inputRef} />
                             <button type="submit"><img src="./icons/search.png" alt="search" /></button>
                         </form>
                     </section>

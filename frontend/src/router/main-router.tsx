@@ -9,6 +9,7 @@ import About from "../pages/about.tsx"
 import LogIn from "../pages/log-in.tsx";
 import SignIn from "../pages/sign-in.tsx";
 import Search from "../pages/search.tsx";
+import RecipePage from "../pages/recipe-page.tsx";
 //SUBPAGES
 import ProfileSubPage from "../pages/subpages/profile-subpage.tsx";
 import FavoritesSubPage from "../pages/subpages/favorites-subpage.tsx";
@@ -34,6 +35,7 @@ export const MainRouter = createBrowserRouter([
             { path: "/login", element: <LogIn /> },
             { path: "/signin", element: <SignIn /> },
             { path: "/search", element: <Search /> },
+            { path: "/pages", element: <RecipePage />},
             { path: "*", element: <Navigate to="/" replace /> }
         ]
     }

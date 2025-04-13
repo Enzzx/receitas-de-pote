@@ -32,7 +32,7 @@ export default function SearchResultContainer(props: { recipes: RecipeData[], ne
           <div className="list-container">
             {recipes != null && recipes.length > 0 ? (
               recipes.map((recipe) => (
-                <a href={'recipes/pages/'+recipe.Slug} key={recipe.Id} className="list-item recipe-item">
+                <a href={'pages/'+recipe.Slug} key={recipe.Id} className="list-item recipe-item">
                   <img
                     src={recipe.Image}
                     alt={recipe.Title}

@@ -15,7 +15,7 @@ export default function RecipeBox(props: RecipeData) {
     }
 
     return (
-        <a href={"recipes/pages/"+Slug} className="recipe-box">
+        <a href={"pages/"+Slug} className="recipe-box">
             <img src={Image} alt={Title} />
             <div className="recipe-box-info">
                 <h3 className="recipe-title">{Title}</h3>
