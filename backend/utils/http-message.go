@@ -72,3 +72,15 @@ func HttpSBody(successfull bool, message string, news *[]models.NewsData, recipe
 	parsedHttp, err := json.Marshal(httpBody)
 	return string(parsedHttp), err
 }
+
+func HttpFRBody(successfull bool, message string, recipe *models.FullRecipeData) (string, error) {
+	var httpBody models.HttpFullRecipeBody
+	httpBody.Successfull = successfull
+	httpBody.Message = message
+	if recipe != nil {
+		httpBody.Data = *recipe
+	}
+
+	parsedHttp, err := json.Marshal(httpBody)
+	return string(parsedHttp), err
+}

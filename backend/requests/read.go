@@ -154,3 +154,13 @@ func GetNewsByTitle(title string) ([]models.NewsData, error) {
 
 	return news, err
 }
+
+func GetRecipeContent(slug string) (models.FullRecipeData, error) {
+	var recipe models.FullRecipeData
+	query := "SELECT r.id AS id, COALESCE(r.image, '') AS image, COALESCE(r.title, '') AS title, COALESCE(r.description, '') AS description, COALESCE(r.slug, '') AS slug, COALESCE(r.preptime, '') AS prepTime, COALESCE(r.cooktime, '') AS cookTime, COALESCE(r.servings, 0) AS servings, COALESCE(r.difficulty, '') AS difficulty, COALESCE(u.username, '') AS author, COALESCE(u.pfp, '') AS pfp, COALESCE((SELECT array_agg(i.name) FROM recipe_ingredient ri JOIN ingredient i ON ri.ingredient_id = i.id WHERE ri.recipe_id = r.id), '{}') AS ingredients, COALESCE((SELECT array_agg(ris.instruction_text ORDER BY ris.sort_order) FROM recipe_instruction ris WHERE ris.recipe_id = r.id), '{}') AS instructions, COALESCE((SELECT array_agg(t.name) FROM recipe_tag rt JOIN tag t ON rt.tag_id = t.id WHERE rt.recipe_id = r.id), '{}') AS tags FROM recipes r JOIN users u ON r.user_id = u.id WHERE r.slug = $1;"
+
+	err := config.DB.QueryRow(context.Background(),
+	query, slug).Scan(&recipe.Id, &recipe.Image, &recipe.Title, &recipe.Description, &recipe.Slug, &recipe.PrepTime, &recipe.CookTime, &recipe.Servings, &recipe.Difficulty, &recipe.Author.Username, &recipe.Author.Img, &recipe.Ingredients, &recipe.Instructions, &recipe.Tags)
+
+	return recipe, err
+}

@@ -19,9 +19,9 @@ type User struct {
 }
 
 type HttpAccBody struct {
-	Message    string
+	Message     string
 	Successfull bool
-	Data       string
+	Data        string
 }
 
 type UserProfile struct {
@@ -38,13 +38,23 @@ type RecipeData struct {
 	Slug        string
 }
 
-type HttpProfileBody struct {
-	Message    string
-	Successfull bool
-	Data       struct {
-		Profile UserProfile
-		Recipes []RecipeData
+type FullRecipeData struct {
+	Id          int
+	Image       string
+	Title       string
+	Description string
+	Slug        string
+	PrepTime    string
+	CookTime    string
+	Servings    int
+	Difficulty  string
+	Ingredients []string
+	Instructions []string
+	Author       struct {
+		Username string
+		Img      string
 	}
+	Tags []string
 }
 
 type NewsData struct {
@@ -54,6 +64,15 @@ type NewsData struct {
 	Image       string
 	Publication time.Time
 	Topic       string
+}
+
+type HttpProfileBody struct {
+	Message     string
+	Successfull bool
+	Data        struct {
+		Profile UserProfile
+		Recipes []RecipeData
+	}
 }
 
 type HttpNewsBody struct {
@@ -66,6 +85,12 @@ type HttpRecipesBody struct {
 	Message     string
 	Successfull bool
 	Data        []RecipeData
+}
+
+type HttpFullRecipeBody struct {
+	Message     string
+	Successfull bool
+	Data        FullRecipeData
 }
 
 type HttpSearchBody struct {
