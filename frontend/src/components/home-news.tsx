@@ -29,14 +29,11 @@ export default function HomeNews() {
         }
     }
 
-
     useEffect(() => {
         getLastNews()
     }, [])
 
-    //count the post date to present date
     function getTimeFromDate(date: string): string {
-        //console.log(date)
         const postDate: Date = new Date(date)
         const now: Date = new Date()
         let diff: number = now.getTime() - postDate.getTime()

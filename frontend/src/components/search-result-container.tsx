@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { News, RecipeData } from '../models';
+import { Link } from 'react-router-dom';
 
 export default function SearchResultContainer(props: { recipes: RecipeData[], news: News[] }) {
   const { recipes = [], news = [] } = props
@@ -32,7 +33,7 @@ export default function SearchResultContainer(props: { recipes: RecipeData[], ne
           <div className="list-container">
             {recipes != null && recipes.length > 0 ? (
               recipes.map((recipe) => (
-                <a href={'pages/'+recipe.Slug} key={recipe.Id} className="list-item recipe-item">
+                <Link to={'pages/recipes/'+recipe.Slug} key={recipe.Id} className="list-item recipe-item">
                   <img
                     src={recipe.Image}
                     alt={recipe.Title}
@@ -42,7 +43,7 @@ export default function SearchResultContainer(props: { recipes: RecipeData[], ne
                     <h3 className="item-title">{recipe.Title}</h3>
                     <p className="item-description">{reticence(recipe.Description)}</p>
                   </div>
-                </a>
+                </Link>
               ))
             ) : (
               <div className="empty-state">Não há receitas correspondentes</div>

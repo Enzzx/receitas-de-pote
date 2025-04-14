@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function SearchBar() {
     return (
         <div className="search-bar-container">
@@ -11,13 +13,13 @@ export default function SearchBar() {
             <section className="search-bar-options">
                 <h4>Sugestões</h4>
                 <div>
-                    <a href="">Frango</a>
-                    <a href="">Lasanha</a>
-                    <a href="">Pão de batata</a>
-                    <a href="">Panqueca</a>
-                    <a href="">Torta</a>
-                    <a href="">Carne moída</a>
-                    <a href="">Batata amassada</a>
+                    <Link to={'/search?query=frango'}>Frango</Link>
+                    <Link to={'/search?query=lasanha'}>Lasanha</Link>
+                    <Link to={'/search?query=pao-de-batata'}>Pão de batata</Link>
+                    <Link to={'/search?query=panqueca'}>Panqueca</Link>
+                    <Link to={'/search?query=torta'}>Torta</Link>
+                    <Link to={'/search?query=carne-moida'}>Carne moída</Link>
+                    <Link to={'/search?query=batata-amassada'}>Batata amassada</Link>
                 </div>
             </section>
         </div>

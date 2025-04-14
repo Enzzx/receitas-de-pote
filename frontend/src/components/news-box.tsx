@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { News } from "../models"
 
 export default function NewsBox(props: News) {
@@ -14,7 +15,7 @@ export default function NewsBox(props: News) {
     }
 
     return (
-        <a href="#" className="news-box">
+        <Link to="#" className="news-box">
             <img src={Image} alt="news thumb" />
             <div className="news-box-info">
                 <aside>
@@ -23,6 +24,6 @@ export default function NewsBox(props: News) {
                 </aside>
                 <h4>{Title}</h4>
             </div>
-        </a>
+        </Link>
     )
 }

@@ -8,7 +8,7 @@ export default function RecipesContainer(props: { title: string }) {
 
     async function getRecipes() {
         try {
-            const req = await fetch(import.meta.env.VITE_BACKEND_URL + "/recipes?topic=" + title.toLowerCase())
+            const req = await fetch(import.meta.env.VITE_BACKEND_URL + "/recipes/topic?topic=" + title.toLowerCase())
             const res: HttpRecipesBody = await req.json()
 
             console.log(res.Message)

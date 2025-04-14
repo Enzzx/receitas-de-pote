@@ -35,7 +35,7 @@ export const MainRouter = createBrowserRouter([
             { path: "/login", element: <LogIn /> },
             { path: "/signin", element: <SignIn /> },
             { path: "/search", element: <Search /> },
-            { path: "/pages", element: <RecipePage />},
+            { path: "/pages/recipes/:slug", element: <RecipePage />},
             { path: "*", element: <Navigate to="/" replace /> }
         ]
     }

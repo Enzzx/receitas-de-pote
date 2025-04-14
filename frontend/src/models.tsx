@@ -6,6 +6,26 @@ export type RecipeData = {
     Slug: string
 }
 
+export type FullRecipeData = {
+    Id: number
+    Image: string
+    Title: string
+    Description: string
+    Slug: string
+    PrepTime: string
+    CookTime: string
+    Servings: number
+    Difficulty: string
+    Ingredients: string[]
+    Instructions: string[]
+    Author: {
+        Username: string
+        Img: string
+    }
+    Tags: string[]
+    RelatedRecipes?: RecipeData[]
+}
+
 export type UserProfile = {
     Img: string
     Username: string
@@ -47,6 +67,12 @@ export type HttpRecipesBody = {
     Message: string
     Successfull: boolean
     Data: RecipeData[]
+}
+
+export type HttpFullRecipeBody = {
+    Message: string
+    Successfull: boolean
+    Data: FullRecipeData
 }
 
 export type HttpSearchBody = {

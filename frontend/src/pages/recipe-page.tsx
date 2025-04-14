@@ -2,104 +2,35 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import FooterPage from '../components/footer-page';
-
-// Type definition for a complete recipe
-type FullRecipeData = {
-    Id: number;
-    Image: string;
-    Title: string;
-    Description: string;
-    Slug: string;
-    PrepTime: string;
-    CookTime: string;
-    Servings: number;
-    Difficulty: string;
-    Ingredients: string[];
-    Instructions: string[];
-    Author: {
-        Username: string;
-        Img: string;
-    };
-    Tags: string[];
-    RelatedRecipes?: RecipeData[];
-};
-
-// Basic recipe data type (as provided)
-type RecipeData = {
-    Id: number;
-    Image: string;
-    Title: string;
-    Description: string;
-    Slug: string;
-};
+import { FullRecipeData, HttpFullRecipeBody } from '../models';
 
 export default function RecipePage() {
     const { slug } = useParams();
     const [recipe, setRecipe] = useState<FullRecipeData | null>(null);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        // This would normally be an API call to fetch the recipe data
-        // For now, we'll use mock data
-        const fetchRecipe = async () => {
-            setLoading(true);
-            try {
-                // Simulating API call
-                await new Promise(resolve => setTimeout(resolve, 500));
+    async function getRecipeContent(slug: string) {
+        try {
+            const req = await fetch(import.meta.env.VITE_BACKEND_URL + "/recipes/content?slug=" + slug)
+            const res: HttpFullRecipeBody = await req.json()
 
-                // Mock data
-                const mockRecipe: FullRecipeData = {
-                    Id: 1,
-                    Image: "https://placehold.co/800x500",
-                    Title: "Bolo de Cenoura com Cobertura de Chocolate",
-                    Description: "Um delicioso bolo de cenoura tradicional com cobertura de chocolate. Perfeito para o café da tarde ou festas de aniversário.",
-                    Slug: "bolo-de-cenoura",
-                    PrepTime: "20 minutos",
-                    CookTime: "40 minutos",
-                    Servings: 8,
-                    Difficulty: "Fácil",
-                    Ingredients: [
-                        "2 cenouras médias, descascadas e cortadas em cubos",
-                        "3 ovos",
-                        "1 xícara de óleo vegetal",
-                        "2 xícaras de açúcar",
-                        "2 xícaras de farinha de trigo",
-                        "1 colher de sopa de fermento em pó",
-                        "1/2 colher de chá de sal",
-                        "4 colheres de sopa de chocolate em pó",
-                        "1/2 xícara de açúcar",
-                        "1/3 xícara de leite",
-                        "2 colheres de sopa de manteiga"
-                    ],
-                    Instructions: [
-                        "Preaqueça o forno a 180°C. Unte uma forma redonda com manteiga e farinha.",
-                        "No liquidificador, bata as cenouras, os ovos e o óleo até obter uma mistura homogênea.",
-                        "Em uma tigela grande, misture a farinha, o açúcar e o sal.",
-                        "Adicione a mistura de cenoura à tigela e mexa bem até incorporar todos os ingredientes.",
-                        "Por último, adicione o fermento e misture levemente.",
-                        "Despeje a massa na forma preparada e leve ao forno por aproximadamente 40 minutos, ou até que um palito inserido no centro saia limpo.",
-                        "Para a cobertura, misture o chocolate em pó, o açúcar, o leite e a manteiga em uma panela pequena.",
-                        "Cozinhe em fogo médio, mexendo constantemente, até engrossar (cerca de 5 minutos).",
-                        "Despeje a cobertura sobre o bolo ainda quente e espalhe uniformemente.",
-                        "Deixe esfriar completamente antes de servir."
-                    ],
-                    Author: {
-                        Username: "mariasouza",
-                        Img: "https://placehold.co/100x100"
-                    },
-                    Tags: ["Sobremesa", "Bolo", "Chocolate", "Cenoura"]
-                };
-
-                setRecipe(mockRecipe);
-            } catch (error) {
-                console.error("Error fetching recipe:", error);
-            } finally {
-                setLoading(false);
+            console.log(res.Message)
+            if (res.Successfull) {
+                setRecipe(res.Data)
             }
-        };
+        } catch (e) {
+            throw e
+        } finally {
+            setLoading(false)
+        }
+    }
 
-        fetchRecipe();
-    }, [slug]);
+
+    useEffect(() => {
+        if (slug != null) {
+            getRecipeContent(slug)
+        }
+    }, [])
 
     if (loading) {
         return (
@@ -111,7 +42,7 @@ export default function RecipePage() {
                 </div>
                 <FooterPage />
             </div>
-        );
+        )
     }
 
     if (!recipe) {
@@ -124,7 +55,7 @@ export default function RecipePage() {
                 </div>
                 <FooterPage />
             </div>
-        );
+        )
     }
 
     return (
@@ -205,5 +136,5 @@ export default function RecipePage() {
 
             <FooterPage />
         </div>
-    );
+    )
 }
