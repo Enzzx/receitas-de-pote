@@ -106,3 +106,8 @@ type Claims struct {
 	Username string
 	jwt.RegisteredClaims
 }
+
+type RecipeImageUpdateRequest struct {
+	Slug  string
+	Image string
+}

@@ -19,5 +19,6 @@ func registerRoutes(mux *http.ServeMux) {
 	mux.HandleFunc("/news/page", handlers.News)
 	mux.HandleFunc("/recipes/topic", handlers.GetRecipesByTopic)
 	mux.HandleFunc("/recipes/content", handlers.GetFullRecipe)
+	mux.Handle("/recipes/update-image", middleware.Auth(http.HandlerFunc(handlers.AddImageRecipe)))
 	mux.HandleFunc("/search", handlers.SearchQuery)
 }
