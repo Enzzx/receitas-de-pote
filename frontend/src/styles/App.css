@@ -1162,6 +1162,45 @@ nav ul li:hover {
     margin-bottom: 15px;
 }
 
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00000080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+  }
+  .image-preview {
+    margin-top: 15px;
+    text-align: center;
+  }
+  .preview-image {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 4px;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .error-message {
+    color: red;
+    margin-top: 5px;
+  }
+
 
 
 /* - - - - - - responsive layout - - - - - - */
