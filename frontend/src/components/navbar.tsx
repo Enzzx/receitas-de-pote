@@ -31,7 +31,7 @@ export default function Navbar({ username }: { username: string | null }) {
     return (
         <nav className={isShrunk || mobile ? "shrink" : ""}>
             <section>
-                <img src="./icons/menu.png" alt="menu" className="hide"/>
+                <img src="./icons/menu.png" alt="menu" className={mobile ? "" : "hide"}/>
                 <form action="/search" method="get" className="search-bar">
                     <input name="query" type="search" placeholder="pesquise uma receita"/>
                     <button type="submit" className={mobile ? "hide" : ""}><img src="./icons/search.png" alt="search" /></button>

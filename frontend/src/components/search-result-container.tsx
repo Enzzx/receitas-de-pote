@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { News, RecipeData } from '../models';
+import { getTimeFromDate, News, RecipeData } from '../models';
 import { Link } from 'react-router-dom';
 
 export default function SearchResultContainer(props: { recipes: RecipeData[], news: News[] }) {
@@ -22,10 +22,10 @@ export default function SearchResultContainer(props: { recipes: RecipeData[], ne
       <div className="toggle-buttons">
         <button
           className={`toggle-btn ${activeTab === 'recipes' ? 'active' : ''}`}
-          onClick={() => setActiveTab('recipes')}>Recipes</button>
+          onClick={() => setActiveTab('recipes')}>Receitas</button>
         <button
           className={`toggle-btn ${activeTab === 'news' ? 'active' : ''}`}
-          onClick={() => setActiveTab('news')}>News</button>
+          onClick={() => setActiveTab('news')}>Notícias</button>
       </div>
 
       <div className="content-area">
@@ -33,7 +33,7 @@ export default function SearchResultContainer(props: { recipes: RecipeData[], ne
           <div className="list-container">
             {recipes != null && recipes.length > 0 ? (
               recipes.map((recipe) => (
-                <Link to={'pages/recipes/'+recipe.Slug} key={recipe.Id} className="list-item recipe-item">
+                <Link to={'/pages/recipes/'+recipe.Slug} key={recipe.Id} className="list-item recipe-item">
                   <img
                     src={recipe.Image}
                     alt={recipe.Title}
@@ -64,7 +64,7 @@ export default function SearchResultContainer(props: { recipes: RecipeData[], ne
                   <div className="item-content">
                     <div className="item-meta">
                       <span className="topic-tag">{item.Topic}</span>
-                      <span className="publication-name">{item.Publication}</span>
+                      <span className="publication-name">{getTimeFromDate(item.Publication)}</span>
                     </div>
                     <h3 className="item-title">{item.Title}</h3>
                     <p className="item-description">{item.Description}</p>

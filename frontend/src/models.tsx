@@ -80,3 +80,28 @@ export type HttpSearchBody = {
     Successfull: boolean
     Data: { Recipes: RecipeData[], News: News[] }
 }
+
+
+
+export function getTimeFromDate(date: string): string {
+    const postDate: Date = new Date(date)
+    const now: Date = new Date()
+    let diff: number = now.getTime() - postDate.getTime()
+
+    const diffHrs = Math.floor(diff / (1000 * 60 * 60))
+    const diffDays = Math.floor(diff / (1000 * 60 * 60 * 24))
+
+    return diffDays > 1 ? `há ${diffDays.toString()} dias` : `há ${diffHrs.toString()} horas`
+}
+
+
+export function reticence(str: string): string {
+    if (str.length <= 80) return str
+
+    str = str.slice(0, 80)
+    while(/[^a-zA-Z0-9]$/.test(str)) {
+        str = str.slice(0, -1)
+    }
+
+    return str + "..."
+}

@@ -11,7 +11,7 @@
 header {
     z-index: 2;
     background: #fff5dd;
-    padding: 15px 10px;
+    padding: 15px 20px;
     /* border-right: 1px solid #e3e3e3; */
     box-sizing: content-box;
 }
@@ -45,14 +45,20 @@ header ul a:visited {
     color: inherit;
 }
 header ul a img {
-    width: 25px;
+    width: 35px;
     height: auto;
 }
 header ul a span {
     color: #3c4043;
     transition: 0.1s ease;
 }
-header ul a:hover span, .active-page span {
+header ul a img {
+    transition: 0.2s ease;
+}
+header ul a:hover img {
+    transform: translateY(-4px);
+}
+.active-page span {
     font-weight: 500;
     color: #272727;
 }
@@ -109,7 +115,7 @@ nav section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 0;
+    padding: 30px 0;
 }
 .search-bar, .search-bar-container-search {
     display: flex;
@@ -158,7 +164,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     /* gap: 80px; */
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     white-space: nowrap;
     list-style-type: none;
     overflow-x: auto;
@@ -183,9 +189,9 @@ nav ul li:hover {
     display: flex;
     justify-content: space-between;
     gap: 30px;
-    max-width: 1400px;
+    max-width: 1700px;
     margin: 0 auto;
-    padding: 40px 30px;
+    padding: 5vh 30px;
 }
 .main-news {
     flex: 55%;
@@ -321,8 +327,8 @@ nav ul li:hover {
 /* - - - - - - recipes-container.tsx, recipe-box.tsx - - - - - - */
 .recipes-container {
     text-align: center;
-    padding: 40px 30px;
-    max-width: 1400px;
+    padding: 5vh 30px;
+    max-width: 1500px;
     margin: 0 auto;
 }
 .recipes-container h2 {
@@ -346,19 +352,19 @@ nav ul li:hover {
 .recipes {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .recipes-container .recipe-box {
     position: relative;
-    flex: 1 1 300px;
+    flex: 1 1 320px;
     display: flex;
     flex-direction: column;
     background-color: #fff5dd;
     color: inherit;
     text-align: left;
-    max-width: 380px;
+    max-width: 400px;
     min-width: 250px;
     text-decoration: none;
     box-shadow: 0 5px 15px #0000000d;
@@ -451,8 +457,9 @@ nav ul li:hover {
     display: flex;
     justify-content: space-between;
     gap: 40px;
-    margin: 50px 30px;
-    padding: 20px 30px;
+    /* max-width: 1500px; */
+    margin: 50px 20px;
+    padding: 2vh 30px;
     border: solid 1px black;
 }
 .search-bar-section {
@@ -501,8 +508,10 @@ nav ul li:hover {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
+    /* align-items: center; */
     background: #e1f5da;
     height: 70vh;
+    max-height: 700px;
     margin-top: 100px;
     border-top: solid 1px #8bbd8b;
 }
@@ -510,8 +519,10 @@ nav ul li:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* gap: 50vw; */
+    margin-top: 80px;
+    /* max-width: 1400px; */
     padding: 0 100px;
-    padding-top: 30px;
 }
 .footer-content ul {
     list-style-type: none;
@@ -1305,7 +1316,7 @@ nav ul li:hover {
         background: #fff5dd;
     }
     nav section {
-        padding-top: 0;
+        padding-top: 10px;
     }
 
     .search-bar button {
