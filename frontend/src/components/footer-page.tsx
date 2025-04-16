@@ -2,7 +2,7 @@ export default function FooterPage() {
     return (
         <section className="footer">
             <div className="footer-content">
-                <img src="logo.png" alt="logo" />
+                <img src="/logo.png" alt="logo" />
                 <ul>
                     <li>café da manhã</li>
                     <li>lanches</li>
