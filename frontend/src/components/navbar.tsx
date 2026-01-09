@@ -31,14 +31,17 @@ export default function Navbar({ username }: { username: string | null }) {
     return (
         <nav className={isShrunk || mobile ? "shrink" : ""}>
             <section>
-                <img src="/icons/menu.png" alt="menu" className={mobile ? "" : "hide"}/>
+                <div>
+                    <img src="/icons/menu.png" alt="menu" className={mobile ? "" : "hide"}/>
+                    <img src="/logo.png" alt="menu" className={mobile ? "" : "hide"}/>
+                </div>
                 <form action="/search" method="get" className="search-bar">
                     <input name="query" type="search" placeholder="pesquise uma receita"/>
-                    <button type="submit" className={mobile ? "hide" : ""}><img src="/icons/search.png" alt="search" /></button>
+                    <button type="submit" ><img src="/icons/search.png" alt="search" /></button>
                 </form>
                 <Link to={username != null ? '/account' : '/login'} className="pfp">
                     <img src="/icons/account.png" alt="pfp" />
-                    <p className={mobile ? "hide" : ""}>{username != null ? username : 'Conecte-se'}</p>
+                    <p>{username != null ? username : 'Conecte-se'}</p>
                 </Link>
             </section>
             <ul className={isShrunk || mobile ? "hide": ""}>
